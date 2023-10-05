@@ -1,0 +1,45 @@
+{% extends 'base-back.html.twig' %}
+
+{% block title %}Car list{% endblock %}
+
+{% block body %}
+<div class="container bg-lighttt pt-5">
+
+    <div class="row mb-2">
+
+        <div class="col">
+        {% if car is defined %}
+            <h1>Edit car</h1>
+        {% else %}
+            <h1>Add car</h1>
+        {% endif %}
+
+            {{ form_start(carForm) }}
+            
+            {{ form_row(carForm.make) }}
+
+            {{ form_row(carForm.model) }}
+
+            {{ form_row(carForm.color) }}
+
+            {{ form_row(carForm.chassis) }}
+
+            {{ form_row(carForm.year) }}
+
+            {{ form_row(carForm.engine) }}
+
+            {{ form_row(carForm.horsepower) }}
+
+            {{ form_row(carForm.image) }}
+
+        {% if car is defined %}
+            <button class="btn btn-success m-2">Edit</button>
+        {% else %}
+            <button class="btn btn-success m-2">Add</button>
+        {% endif %}
+            {{ form_end(carForm) }}
+            <a href="{{path ('back_car_list')}}"><button class="btn btn-danger m-2">Back</button></a>
+        </div>
+    </div>
+</div>
+{% endblock %}

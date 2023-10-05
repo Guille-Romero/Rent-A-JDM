@@ -1,0 +1,46 @@
+{% extends "base.html.twig" %}
+{% block body %}
+<div class="container bg-lighttt pt-5">
+
+        <div class="row mb-2">
+
+            <div class="col">
+
+                <div
+                    class="g-0 borderrr rrrounded overflow-hidden flex-md-row align-items-start mb-4 shadow-smmm position-relative">
+                    <div class="img-thumbnail">
+                        <img src="{{ car.image }}" class="rounded mx-auto d-block w-75">
+                    </div>
+
+                    <div class="p-4 d-flex flex-column position-static bg-light">
+                        <strong class="d-inline-block mb-2 text-primary">{{ car.make.name }}</strong>
+                        <h3 class="mb-1">{{ car.make.name }} {{ car.model }}</h3>
+                        <p>
+                            {# Boucle sur TOUS les genres associés au film courant #}
+                            Couleur:
+                            <span class="badge bg-warning text-dark">{{ car.color }}</span>
+                           
+                        </p>
+
+                        <dl class="row">
+                            <dt class="col-sm-12">Année:</dt>
+                            <dd class="col-sm-12">
+                            {{ car.year }}
+                            </dd>
+                        </dl>
+
+                        <h3>Moteur</h3>
+                    
+                        <p class="m-0"><strong>code:</strong> {{ car.engine }}</p>
+                        <p ><strong>puissance:</strong> {{ car.hp }}hp</p>
+                        
+                        <a href="{{ path('car_list') }}" class="btn btn-danger">Retour</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}

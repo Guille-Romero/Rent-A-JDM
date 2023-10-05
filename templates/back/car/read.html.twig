@@ -1,0 +1,46 @@
+{% extends "base-back.html.twig" %}
+{% block body %}
+<div class="container bg-lighttt pt-5">
+
+        <div class="row mb-2">
+
+            <div class="col">
+
+                <div
+                    class="g-0 borderrr rrrounded overflow-hidden flex-md-row align-items-start mb-4 shadow-smmm position-relative">
+                    <div class="img-thumbnail">
+                        <img src="{{ event.image }}" class="rounded mx-auto d-block w-75">
+                    </div>
+
+                    <div class="p-4 d-flex flex-column position-static bg-light">
+                        <strong class="d-inline-block mb-2 text-primary">{{ event.make.name }}</strong>
+                        <h3 class="mb-1">{{ event.make.name }} {{ event.model }}</h3>
+                        <p>
+                            {# Boucle sur TOUS les genres associés au film courant #}
+                            Couleur:
+                            <span class="badge bg-warning text-dark">{{ event.color }}</span>
+                           
+                        </p>
+
+                        <dl class="row">
+                            <dt class="col-sm-12">Année:</dt>
+                            <dd class="col-sm-12">
+                            {{ event.year }}
+                            </dd>
+                        </dl>
+
+                        <h3>Moteur</h3>
+                    
+                        <p class="m-0"><strong>code:</strong> {{ event.engine }}</p>
+                        <p ><strong>puissance:</strong> {{ event.horsepower }}hp</p>
+                        
+                        <a href="{{ path('back_event_list') }}" class="btn btn-danger">Back</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}

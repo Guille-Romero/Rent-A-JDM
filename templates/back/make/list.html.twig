@@ -1,0 +1,49 @@
+{% extends 'base-back.html.twig' %}
+
+{% block title %}Liste des marques{% endblock %}
+
+{% block body %}
+<div class="container my-4">
+    <a href="{{path ('back_make_create')}}" class="btn btn-success float-end">Add make</a>
+
+    <h2>Make list</h2>
+    <table class="table table-hover mt-4">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Manufacturer</th>
+                <th scope="col"></th>
+
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for make in makes %}
+            <tr>
+                <th scope="row">{{make.id}}</th>
+                <td>{{make.name}}</td>
+ 
+                <td class="text-end">
+                    <a href="{{path ('back_make_update', {id: make.id})}}" class="btn btn-sm btn-warning">
+                        <i class="bi bi-pencil"></i>
+                    </a>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                        <div class="dropdown-menu bg-dark text-white">
+                            <p class="ps-3">you sure?!</p>
+                            <a class="dropdown-item bg-danger" href="{{path ('back_make_delete', {id: make.id})}}" data-toggle="dropdown">YES!</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="col-12 p-4 d-flex flex-column position-static bg-light">
+      
+        <a href="{{ path('back_main') }}" class="btn btn-danger">Back</a>
+    </div>
+</div>
+{% endblock %}
