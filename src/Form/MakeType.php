@@ -20,6 +20,7 @@ class MakeType extends AbstractType
                     new NotBlank(),
                 ]
             ])
+            ->add('image')
         ;
     }
 

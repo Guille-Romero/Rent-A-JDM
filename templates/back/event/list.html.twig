@@ -27,9 +27,6 @@
                     {% endfor %}</td>
                 <td>{{event.image}}</td>
                 <td class="text-end">
-                    <a href="{{path ('back_event_read', {id: event.id})}}" class="btn btn-sm btn-primary">
-                        <i class="bi bi-eyeglasses"></i>
-                    </a>
                     <a href="{{path ('back_event_update', {id: event.id})}}" class="btn btn-sm btn-warning">
                         <i class="bi bi-pencil"></i>
                     </a>

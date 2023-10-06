@@ -1,49 +1,52 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste des marques{% endblock %}
+{% block title %}Rent-A-JDM{% endblock %}
 
 {% block body %}
+<h1 class = "text-center bg bg-danger text-white p-3 fw-bold">Rent-A-JDM!</h1>
 <div class="container my-4">
-    <a href="{{path ('make_create')}}" class="btn btn-success float-end">Ajouter</a>
+    <h2 class = "text-center fw-bold m-5">Makes</h2>
 
-    <h2>Liste de marques</h2>
-    <table class="table table-hover mt-4">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Constructeur</th>
-                <th scope="col"></th>
+    <section class = "brands mt-5">
+        <h2>What make do you prefer?</h2>
+        <p>Select a make an see what you can have: events, cars and options</p>
+    </section>
 
-                <th scope="col"></th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class = "row">
         {% for make in makes %}
-            <tr>
-                <th scope="row">{{make.id}}</th>
-                <td>{{make.name}}</td>
- 
-                <td class="text-end">
-                    <a href="{{path ('make_update', {id: make.id})}}" class="btn btn-sm btn-warning">
-                        <i class="bi bi-pencil"></i>
-                    </a>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                        <div class="dropdown-menu">
-                            <p class="">...tu es sûr?</p>
-                            <a class="dropdown-item" href="{{path ('make_delete', {id: make.id})}}" data-toggle="dropdown">YES!</a>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <div class="col-12 p-4 d-flex flex-column position-static bg-light">
-      
-        <a href="{{ path('make_read') }}" class="btn btn-danger">Retour</a>
+        <div class = "col-4 mt-4">
+            <h3>{{make.name}}</h3>
+            <a href="{{path ('make_car_list', {id: make.id})}}"><img class = "col-12" src = "{{make.image}}"></img></a>
+        </div>
+        {% endfor %}
+        
     </div>
+
+    <section class = "offer mt-5">
+        <h2>Your event is not on the list?</h2>
+        <p>Don't worry we can adapt!!</p>
+        <p>Contact our support explaining your event type, duration, distance and activities and we will send you to the email provided an estimation in 24/48 hours.</p>
+    </section>
+    <div class = "section-div">
+    </div>
+    <section class = "brands mt-5">
+        <h2>What brands do we manage?</h2>
+        <p>We are actually working with some important car manufacturers like Nissan, Mazda and Honda and aftermarket carparts manufacturers like Nismo, HKS, Greddy, Apexi and Tomei</p>
+    </section>
+    <div class = "section-div">
+    </div>
+    <section class = "events mt-5">
+        <h2>What kind of events?</h2>
+        <p>The event itself is up to you.</p>
+        <p>It can be:</p>
+        <ul>
+            <li>A wedding, with chauffeur or not, depends on if you want to drive the car like a boss the great day</li>
+            <li>A gender reveal with option for a tyre color smoke personalization</li>
+            <li>For shooting photo sessions or even to make a film</li>
+            <li>You can just offer somebody a good roadtrip in a legendary jdm car</li>
+            <li>Or you can just drive your dream car</li>
+        </ul>
+        <p>If you have a custom event request feel free to contact our support for pricing and conditions</p>
+    </section>
 </div>
 {% endblock %}

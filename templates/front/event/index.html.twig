@@ -8,20 +8,24 @@
     <h2 class = "text-center fw-bold m-5">Events</h2>
 
     <section class = "brands mt-5">
-        <h2>What brands do we manage?</h2>
-        <p>We are actually working with some important car manufacturers like Nissan, Mazda and Honda and aftermarket carparts manufacturers like Nismo, HKS, Greddy, Apexi and Tomei</p>
+        <h2>What event do you have in mind?</h2>
+        <p>Here is the list of events for you. Upon clicking on one of them you will be able to see and select the car you would like to get for the event selected.</p>
     </section>
-    
-    <div class = "row"> 
-        <img class = "col-4" src = "https://images.unsplash.com/photo-1615465224313-763997987f66?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80"></img>
-        <img class = "col-4" src = "https://images.unsplash.com/photo-1624343582151-b74d5b1b7285?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80"></img>
-        <img class = "col-4" src = "https://images.unsplash.com/photo-1569192545261-936d1ab6cf2c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80"></img>
+
+    <div class = "row">
+        {% for event in events %}
+        <div class = "col-4 mt-4">
+            <h3>{{event.name}}</h3>
+            <a href="{{path ('event_car_list', {id: event.id})}}"><img class = "col-12" src = "{{event.image}}"></img></a>
+        </div>
+        {% endfor %}
+        
     </div>
 
     <section class = "offer mt-5">
-        <h2>What do we offer?</h2>
-        <p>We offer you the possibility to drive your dream car for one day or just for a particular event. The most important thing for us is that your day became unforgettable!</p>
-        <p>As huge fans and experts of jdm cars we love exchange our knowledge on jdm car culture with others, we can do daily maintenance in our vehicules and customizations such as performance, security or aesthetics.</p>
+        <h2>Your event is not on the list?</h2>
+        <p>Don't worry we can adapt!!</p>
+        <p>Contact our support explaining your event type, duration, distance and activities and we will send you to the email provided an estimation in 24/48 hours.</p>
     </section>
     <div class = "section-div">
     </div>

@@ -12,6 +12,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Manufacturer</th>
+                <th scope="col">Image</th>
                 <th scope="col"></th>
 
                 <th scope="col"></th>
@@ -22,6 +23,7 @@
             <tr>
                 <th scope="row">{{make.id}}</th>
                 <td>{{make.name}}</td>
+                <td>{{make.image}}</td>
  
                 <td class="text-end">
                     <a href="{{path ('back_make_update', {id: make.id})}}" class="btn btn-sm btn-warning">

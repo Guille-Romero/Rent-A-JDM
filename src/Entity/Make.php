@@ -29,6 +29,11 @@ class Make
      */
     private $car;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $image;
+
     public function __construct()
     {
         $this->car = new ArrayCollection();
@@ -77,6 +82,18 @@ class Make
                 $car->setMake(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }

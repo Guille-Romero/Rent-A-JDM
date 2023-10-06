@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rent-A-JDM{% endblock %}
+
+{% block body %}
+<h1 class = "text-center bg bg-danger text-white p-3 fw-bold">Rent-A-JDM!</h1>
+<div class="container my-4">
+    <h2 class = "text-center fw-bold m-5">{{event.name}}</h2>
+
+    <section class = "brands mt-5">
+        <h2>Pick your poisson!?</h2>
+        <p>Here is the list of cars waiting for you.</p>
+    </section>
+    <div class = "row">
+    {% for car in cars %}
+        <div class = "col-4">
+            <image src="{{car.image}}" class = "img-fluid">
+        </div>
+        <div class="col-8 position-static bg-light p-1 mb-3">
+            <div class = "row car-data">
+                <strong class="d-inline-block text-primary">{{ car.make.name }}</strong>
+                <h3 class="mb-4 text-decoration-underline fw-bold">{{ car.make.name }} {{ car.model }}</h3>
+                <div class="col">
+                    <h4>Chassis</h4>
+                    <p>
+                        <strong>Chassis:</strong>
+                        <span class="badge bg-warning text-dark">{{ car.chassis }}</span>
+                    </p>
+                    <p>
+                        <strong>Color:</strong>
+                        <span class="badge bg-info text-dark">{{ car.color }}</span>
+                    </p>
+
+                    <dl class="row">
+                        <dt class="col-sm-12">Year:</dt>
+                        <dd class="col-sm-12">
+                        {{ car.year }}
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col">
+                    <h4>Engine</h4>
+            
+                    <p class="m-0"><strong>code:</strong> {{ car.engine }}</p>
+                    <p ><strong>Horsepower:</strong> {{ car.horsepower }}hp</p>
+                </div>
+                <div class="col">
+                    <h4><strong>Price: </strong>800€</h4>
+                    <form id="productForm">
+
+                        <input class = "d-none"type="number" id="productPrice" name="productPrice" value = "800">
+
+                        <div class="mb-2">
+                            <label>Chauffer:</label>
+                            <input type="radio" id="chaufferYes" name="chauffer" value="yes">
+                            <label for="chaufferYes">Yes</label>
+                            <input type="radio" id="chaufferNo" name="chauffer" value="no">
+                            <label for="chaufferNo">No</label>
+                        </div>
+
+                        <div class="mb-2">
+                            <label>Custom Tyres:</label>
+                            <input type="radio" id="customTyresYes" name="customTyres" value="yes">
+                            <label for="customTyresYes">Yes</label>
+                            <input type="radio" id="customTyresNo" name="customTyres" value="no">
+                            <label for="customTyresNo">No</label>
+                        </div>
+
+                        <div id="colorOptions" style="display: none;" class="mb-2">
+                            <label for="color">Select Color:</label>
+                            <select id="color" name="color">
+                                <option value="red">Red</option>
+                                <option value="blue">Blue</option>
+                                <option value="green">Green</option>
+                                <option value="black">Black</option>
+                            </select><br><br>
+                        </div>
+
+                        <button type="submit" class = "btn btn-danger text-white">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+        <a href="{{ path('event') }}" class="btn btn-danger">Back</a>
+    </div>
+    </div>
+{% endblock %}

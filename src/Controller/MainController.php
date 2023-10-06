@@ -14,7 +14,7 @@ class MainController extends AbstractController
     /**
      * @Route("/", name="main")
      */
-    public function index(EntityManagerInterface $entityManager): Response
+    public function home(EntityManagerInterface $entityManager): Response
     {
         $repository = $entityManager->getRepository(Car::class);
         $cars = $repository->findAll();
