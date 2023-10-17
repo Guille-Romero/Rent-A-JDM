@@ -46,7 +46,7 @@ class EventRepository extends ServiceEntityRepository
     {
         $entityManager = $this->getEntityManager();
 
-        // requete en DQL ( Doctrine Query Language )
+        // DQL request( Doctrine Query Language )
         // SELECT event.*
         // FROM event
         // WHERE event.name LIKE '% $search %'

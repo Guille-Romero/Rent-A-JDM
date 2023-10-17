@@ -74,7 +74,7 @@ class CarRepository extends ServiceEntityRepository
     {
         $entityManager = $this->getEntityManager();
 
-        // requete en DQL ( Doctrine Query Language )
+        // DQL request( Doctrine Query Language )
         // SELECT car.*, make.*
         // FROM car
         // INNER JOIN make ON car.make_id = make.id
