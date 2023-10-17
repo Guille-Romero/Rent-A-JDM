@@ -22,7 +22,7 @@ class Car
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Model;
+    private $model;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -77,12 +77,12 @@ class Car
 
     public function getModel(): ?string
     {
-        return $this->Model;
+        return $this->model;
     }
 
-    public function setModel(string $Model): self
+    public function setModel(string $model): self
     {
-        $this->Model = $Model;
+        $this->model = $model;
 
         return $this;
     }

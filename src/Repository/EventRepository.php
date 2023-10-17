@@ -39,28 +39,25 @@ class EventRepository extends ServiceEntityRepository
         }
     }
 
-//    /**
-//     * @return Event[] Returns an array of Event objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('e')
-//            ->andWhere('e.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('e.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    /**
+    * @return Event[] Returns an array of Car objects
+    */
+    public function eventsBySearchData($search): array
+    {
+        $entityManager = $this->getEntityManager();
 
-//    public function findOneBySomeField($value): ?Event
-//    {
-//        return $this->createQueryBuilder('e')
-//            ->andWhere('e.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+        // requete en DQL ( Doctrine Query Language )
+        // SELECT event.*
+        // FROM event
+        // WHERE event.name LIKE '% $search %'
+        $query = $entityManager->createQuery(
+        'SELECT e
+        FROM App\Entity\Event e
+        WHERE e.name LIKE :search
+        ');
+
+        $query->setParameter('search', '%' . $search . '%');
+        // returns an array of Product objects
+        return $query->getResult();
+    }
 }

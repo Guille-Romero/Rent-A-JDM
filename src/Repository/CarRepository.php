@@ -67,13 +67,28 @@ class CarRepository extends ServiceEntityRepository
             ->getResult();
     }
 
-//    public function findOneBySomeField($value): ?Car
-//    {
-//        return $this->createQueryBuilder('c')
-//            ->andWhere('c.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    /**
+    * @return Car[] Returns an array of Car objects
+    */
+    public function carsBySearchData($search): array
+    {
+        $entityManager = $this->getEntityManager();
+
+        // requete en DQL ( Doctrine Query Language )
+        // SELECT car.*, make.*
+        // FROM car
+        // INNER JOIN make ON car.make_id = make.id
+        // WHERE car.model LIKE '% $search %' OR make.name LIKE  '% $search %'
+        $query = $entityManager->createQuery(
+        'SELECT c
+        FROM App\Entity\Car c
+        INNER JOIN App\Entity\Make m WITH c.make = m.id
+        WHERE c.model LIKE :search
+        OR m.name LIKE :search
+        ');
+
+        $query->setParameter('search', '%' . $search . '%');
+        // returns an array of Product objects
+        return $query->getResult();
+    }
 }
