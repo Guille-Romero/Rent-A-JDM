@@ -54,4 +54,28 @@ class MainController extends AbstractController
             'search' => $searchQuery
         ]);
     }
+
+    /**
+     * @Route("/faqs", name="faqs")
+     */
+    public function faqs()
+    {
+        return $this->render('front/resources/faqs.html.twig');
+    }
+
+    /**
+     * @Route("/about", name="about")
+     */
+    public function about()
+    {
+        return $this->render('front/resources/about.html.twig');
+    }
+
+    /**
+     * @Route("/contact", name="contact")
+     */
+    public function contact()
+    {
+        return $this->render('front/resources/contact.html.twig');
+    }
 }
