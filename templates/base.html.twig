@@ -44,6 +44,8 @@
                 </div>
             </div>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown">
@@ -55,20 +57,36 @@
                             <li><a class="dropdown-item" href="{{path('back_main')}}">Show details</a></li>
                         </ul>
                     </li>
-                        <li class="nav-item dropdown">
+
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown">
-                            <span>Visitor</span>
+                            <span>{{ app.user.username }}</span>
                             <i class="bi bi-person-circle"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="{{path('profile')}}">Profile</a></li>
+                        {% if is_granted('ROLE_MANAGER') %}
                             <li><a class="dropdown-item" href="{{path('back_main')}}">Backoffice</a></li>
+                        {% endif %}
                         </ul>
                     </li>
+                {% else %}
+
+                    <li class="nav-item">
+                        <a class="nav-link me-3">
+                            <span>Visitor</span>
+                            <i class="bi bi-person-circle"></i>
+                        </a>
+                    </li>
+                {% endif %}
                 </ul>
-                    <a href = ""><button type="button" class="btn btn-danger me-2">Log in</button></a>
-                    <a href = ""><button type="button" class="btn btn-danger me-2">Sign in</button></a>
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <a href = "{{path ('logout')}}"><button type="button" class="btn btn-danger me-2">Log out</button></a>
+                {% else %}
+                    <a href = "{{path ('login')}}"><button type="button" class="btn btn-danger me-2">Log in</button></a>
+                    <a href = "{{path ('register')}}"><button type="button" class="btn btn-danger me-2">Sign in</button></a>
+                {% endif %}
 
                 <form class="d-flex" action="list.html">
                     <input class="form-control form-control-sm me-2" name="search" type="search" placeholder="Search...">
@@ -76,8 +94,10 @@
                 </form>
         </nav>
     </header>
+    <main class = "wrapper">
         {% block body %}{% endblock %}
-    <footer class="py-5 mt-5">
+    </main>
+    <footer class="mt-5">
         <div class="row bg-dark text-white p-4">
         <div class="col-4 col-md-2 mb-3">
             <h5>Main</h5>

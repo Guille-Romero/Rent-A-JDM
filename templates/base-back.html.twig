@@ -34,6 +34,9 @@
                     <li class="nav-item">
                     <a class="nav-link" href="{{path('back_car_list')}}">Cars</a>
                     </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="">Users</a>
+                    </li>
                 </ul>
                 <div class="lang-selector ms-5">
                     <select class="form-select" aria-label="">
@@ -44,29 +47,41 @@
                 </div>
             </div>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <li class="nav-item dropdown">
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Items</a></li>
+                            <li><a class="dropdown-item" href="{{path('back_main')}}">Show details</a></li>
+                        </ul>
+                    </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown">
-                            <span>email</span>
+                            <span>{{ app.user.username }}</span>
                             <i class="bi bi-person-circle"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
-                            <li><a class="dropdown-item" href="">Backoffice</a></li>
+                            <li><a class="dropdown-item" href="{{path('profile')}}">Profile</a></li>
+                            <li><a class="dropdown-item" href="{{path('main')}}">Frontoffice</a></li>
                         </ul>
                     </li>
-                        <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown">
-                            <span>Visiteur</span>
+                {% else %}
+
+                    <li class="nav-item">
+                        <a class="nav-link me-3">
+                            <span>Visitor</span>
                             <i class="bi bi-person-circle"></i>
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Sign in</a></li>
-                        </ul>
                     </li>
+                {% endif %}
                 </ul>
-                    <a href = ""><button type="button" class="btn btn-danger me-2">Log in</button></a>
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <a href = "{{path ('logout')}}"><button type="button" class="btn btn-danger me-2">Log out</button></a>
+                {% else %}
+                    <a href = "{{path ('login')}}"><button type="button" class="btn btn-danger me-2">Log in</button></a>
+                    <a href = "{{path ('register')}}"><button type="button" class="btn btn-danger me-2">Sign in</button></a>
+                {% endif %}
 
                 <form class="d-flex" action="list.html">
                     <input class="form-control form-control-sm me-2" name="search" type="search" placeholder="Search...">
@@ -74,7 +89,9 @@
                 </form>
         </nav>
     </header>
+    <main>
         {% block body %}{% endblock %}
+    </main>
     </body>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"

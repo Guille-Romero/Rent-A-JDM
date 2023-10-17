@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sign in{% endblock %}
+
+{% block body %}
+<h1 class = "text-center bg bg-danger text-white p-3 fw-bold">Your Profile</h1>
+    <div class="m-4">
+        <div class="profile-header">
+            
+        </div>
+
+        <div class="row">
+
+        {% if app.user.avatar is defined and app.user.avatar is not null %}
+            <div class="col-4 profile-avatar">
+                <img src="" alt="User Avatar">
+            </div>
+        {% else %}
+            <div class="col-4 profile-avatar">
+                <img class = "rounded-3" src="https://images.unsplash.com/photo-1602646993760-7b885ba225af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2564&q=80" alt="User Avatar">
+            </div>
+        {% endif %}
+
+            <div class=" col-8 profile-details">
+                <h2 class="username">Username : {{ app.user.username }}</h2>
+                <p class="email"> Email : {{ app.user.email }}</p>
+            </div>
+            <a href="{{path('edit')}}" class="btn btn-danger mt-5">Edit</a>
+        </div>
+    </div>
+
+{% endblock %}

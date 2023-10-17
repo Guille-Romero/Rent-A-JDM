@@ -17,12 +17,12 @@ wip:
     - Home Page
     - multilanguage -selector-
     - texts
-
-TODO: 
-
     - Front event page, to select an event type and show the possible cars to rent for the event selected. 
     - Brand page, to select a car by brand and see the events associated with selected car.
     - cars page, A list of all available cars.
+
+TODO: 
+
     - FAQs page, a list of frequent asked questions page with answers.
     - About page, a page to provide information about the company
     - contact, a form to contact the company.

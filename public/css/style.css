@@ -1,9 +1,24 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 nav, .link-light {
     font-size: 1.3rem;
+}
+
+.wrapper {
+    flex-grow: 1;
 }
 
 .section-div{
     width: 100%;
     height: 2rem;
     background: linear-gradient(to right, white 0%, #DDDDDB 15%,#DDDDDB 75%, white 100%);
+}
+
+.profile-avatar img{
+    max-width: 300px;
+    max-height: 300px;
 }

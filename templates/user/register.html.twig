@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sign in{% endblock %}
+
+{% block body %}
+    <div class = "container m-4">
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <h1 class="mb-4">Edit User Profile</h1>
+    {% else %}
+        <h1 class = "mb-4">Sign in</h1>
+    {% endif %}
+
+        {{ form_start(registrationForm) }}
+            {{ form_row(registrationForm.username, {
+                label: 'User name'
+            }) }}
+            {{ form_row(registrationForm.email, {
+                label: 'Email'
+            }) }}
+            {{ form_row(registrationForm.plainPassword, {
+                label: 'Password'
+            }) }}
+            {{ form_row(registrationForm.agreeTerms) }}
+
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <button type="submit" class="btn btn-danger">Save Changes</button>
+        {% else %}
+            <button type="submit" class="btn btn-danger">Sign in</button>
+        {% endif %}
+            
+        {{ form_end(registrationForm) }}
+    </div>
+{% endblock %}

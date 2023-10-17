@@ -5,12 +5,12 @@
 {% block body %}
 <h1 class = "text-center bg bg-danger text-white p-3 fw-bold">Rent-A-JDM!</h1>
 <div class="container my-4">
-    <h2 class = "text-center fw-bold m-5">Cars</h2>
+    <h2 class = "text-center fw-bold m-5">Explore Our Cars</h2>
 
-    <section class = "brands mt-5">
-        <h2>Pick your poisson!?</h2>
-        <p>Here is the list of all cars available.</p>
-    </section>
+        <section class="brands my-5">
+            <h2>Pick Your Poison!</h2>
+            <p>Take a look at our stunning collection of available cars.</p>
+        </section>
     <div class = "row">
     {% for car in cars %}
         <div class = "col-4">
@@ -44,7 +44,7 @@
                     <p class="m-0"><strong>code:</strong> {{ car.engine }}</p>
                     <p ><strong>Horsepower:</strong> {{ car.horsepower }}hp</p>
 
-                    <button type="submit" class = "btn btn-danger text-white position-absolute mb-4 bottom-0 end-0 translate-middle-x">Select car</button>
+                    <a href="" class="btn btn-danger text-white position-absolute mb-4 bottom-0 end-0 translate-middle-x">Select Car</a>
                 </div>
             </div>
         </div>
