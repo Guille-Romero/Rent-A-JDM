@@ -16,27 +16,27 @@
                         <strong class="d-inline-block mb-2 text-primary">{{ car.make.name }}</strong>
                         <h3 class="mb-1">{{ car.make.name }} {{ car.model }}</h3>
                         <p>
-                            <strong>Chassis:</strong>
+                            <strong>{{'Chassis'|trans}}:</strong>
                             <span class="badge bg-warning text-dark">{{ car.chassis }}</span>
                         </p>
                         <p>
-                            <strong>Color:</strong>
+                            <strong>{{'Color'|trans}}:</strong>
                             <span class="badge bg-info text-dark">{{ car.color }}</span>
                         </p>
 
                         <dl class="row">
-                            <dt class="col-sm-12">Year:</dt>
+                            <dt class="col-sm-12">{{'Year'|trans}}:</dt>
                             <dd class="col-sm-12">
                             {{ car.year }}
                             </dd>
                         </dl>
 
-                        <h3>Engine</h3>
+                        <h3>{{'Engine'|trans}}</h3>
                     
-                        <p class="m-0"><strong>code:</strong> {{ car.engine }}</p>
-                        <p ><strong>Horsepower:</strong> {{ car.horsepower }}hp</p>
+                        <p class="m-0"><strong>{{'Code'|trans}}:</strong> {{ car.engine }}</p>
+                        <p ><strong>{{'Horsepower'|trans}}:</strong> {{ car.horsepower }}hp</p>
                         
-                        <a href="{{ path('back_car_list') }}" class="btn btn-danger">Back</a>
+                        <a href="{{ path('back_car_list') }}" class="btn btn-danger">{{'Back'|trans}}</a>
                     </div>
                 </div>
 

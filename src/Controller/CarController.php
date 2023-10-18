@@ -15,7 +15,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class CarController extends AbstractController
 {
     /**
-     * @Route("/car", name="cars")
+     * @Route("/{_locale<%app.supported_locales%>}/car", name="cars")
      */
     public function index(EntityManagerInterface $entityManager): Response
     {

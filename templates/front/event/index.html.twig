@@ -5,17 +5,17 @@
 {% block body %}
 <h1 class = "text-center bg bg-danger text-white p-3 fw-bold">Rent-A-JDM!</h1>
 <div class="container my-4">
-    <h2 class = "text-center fw-bold m-5">Events</h2>
+    <h2 class = "text-center fw-bold m-5">{{'Events'|trans}}</h2>
 
     <section class = "brands mt-5">
-        <h2>What event do you have in mind?</h2>
-        <p>Here is the list of events for you. Upon clicking on one of them you will be able to see and select the car you would like to get for the event selected.</p>
+        <h2>{{'What event do you have in mind'|trans}} ?</h2>
+        <p>{{'Here is the list of events for you. Upon clicking on one of them you will be able to see and select the car you would like to get for the event selected'|trans}}.</p>
     </section>
 
     <div class = "row">
         {% for event in events %}
         <div class = "col-4 mt-4">
-            <h3>{{event.name}}</h3>
+            <h3>{{event.name|trans}}</h3>
             <a href="{{path ('event_car_list', {id: event.id})}}"><img class = "col-12" src = "{{event.image}}"></img></a>
         </div>
         {% endfor %}
@@ -23,28 +23,28 @@
     </div>
 
     <section class="custom-event mt-5">
-        <h2>Your Event Isn't Listed?</h2>
-        <p>No worries! At Rent-A-JDM, we love creating unique and personalized experiences tailored to your specific event. We understand that every occasion is special, and we're here to make it extraordinary for you.</p>
-        <p>To get started, all you need to do is reach out to our dedicated support team. Share the details of your event, including the event type, duration, location, and any specific activities or preferences you have in mind. The more you tell us, the better we can craft a one-of-a-kind experience for you.</p>
-        <p>Our team will promptly review your request and provide you with a customized event proposal within 24-48 hours. We're committed to making your event memorable and unique, just the way you envision it.</p>
+        <h2>{{'Your Event Isn\'t Listed'|trans}}?</h2>
+        <p>{{'No worries! At Rent-A-JDM, we love creating unique and personalized experiences tailored to your specific event. We understand that every occasion is special, and we\'re here to make it extraordinary for you'|trans}}.</p>
+        <p>{{'To get started, all you need to do is reach out to our dedicated support team. Share the details of your event, including the event type, duration, location, and any specific activities or preferences you have in mind. The more you tell us, the better we can craft a one-of-a-kind experience for you'|trans}}.</p>
+        <p>{{'Our team will promptly review your request and provide you with a customized event proposal within 24-48 hours. We\'re committed to making your event memorable and unique, just the way you envision it'|trans}}.</p>
     </section>
 
     <div class="section-div"></div>
 
     <section class="chauffeur mt-5">
-        <h2>Need a Chauffeur?</h2>
-        <p>When you choose Rent-A-JDM for your event, you have the option to enhance your experience with our professional chauffeur services. Our experienced and courteous chauffeurs are dedicated to ensuring your journey is as smooth and enjoyable as possible.</p>
-        <p>Whether you prefer a relaxed and stress-free ride, allowing you to fully immerse yourself in the event, or if you simply want to make a grand entrance, our chauffeurs are here to meet your needs. Sit back, relax, and let us handle the driving while you savor every moment of your event.</p>
-        <p>If you wish to add a chauffeur to your event, please let us know when booking, and we will arrange for a chauffeur to be at your service.</p>
+        <h2>{{'Need a Chauffeur'|trans}}?</h2>
+        <p>{{'When you choose Rent-A-JDM for your event, you have the option to enhance your experience with our professional chauffeur services. Our experienced and courteous chauffeurs are dedicated to ensuring your journey is as smooth and enjoyable as possible'|trans}}.</p>
+        <p>{{'Whether you prefer a relaxed and stress-free ride, allowing you to fully immerse yourself in the event, or if you simply want to make a grand entrance, our chauffeurs are here to meet your needs. Sit back, relax, and let us handle the driving while you savor every moment of your event'|trans}}.</p>
+        <p>{{'If you wish to add a chauffeur to your event, please let us know when booking, and we will arrange for a chauffeur to be at your service'|trans}}.</p>
     </section>
 
     <div class="section-div"></div>
 
     <section class="events mt-5">
-        <h2>Have Questions?</h2>
-        <p>If you have any questions or need more information, we're here to help. We want to ensure your experience with Rent-A-JDM is as smooth as possible.</p>
-        <p>Feel free to check out our <a href="#">FAQ page</a> for answers to common inquiries. If you don't find the information you're looking for there, don't hesitate to get in touch with our friendly support team.</p>
-        <p>Our support team is available to assist you with any concerns or special requests you may have. We're just a message away, and we're committed to providing you with the best possible service.</p>
+        <h2>{{'Have Questions'|trans}}?</h2>
+        <p>{{'If you have any questions or need more information, we\'re here to help. We want to ensure your experience with Rent-A-JDM is as smooth as possible'|trans}}.</p>
+        <p>{{'Feel free to check out our'|trans}} <a href="#">{{'FAQ page'|trans}}</a> {{'for answers to common inquiries. If you don\'t find the information you\'re looking for there, don\'t hesitate to get in touch with our friendly support team'|trans}}.</p>
+        <p>{{'Our support team is available to assist you with any concerns or special requests you may have. We\'re just a message away, and we\'re committed to providing you with the best possible service'|trans}}.</p>
     </section>
 </div>
 {% endblock %}

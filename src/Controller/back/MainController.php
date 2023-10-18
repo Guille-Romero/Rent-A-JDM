@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * @Route("/back", name="back_")
+ * @Route("/{_locale<%app.supported_locales%>}/back", name="back_")
  */
 class MainController extends AbstractController
 {

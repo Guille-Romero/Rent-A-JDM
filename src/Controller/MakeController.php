@@ -16,7 +16,7 @@ class MakeController extends AbstractController
 {
 
     /**
-     * @Route("/make", name="make")
+     * @Route("/{_locale<%app.supported_locales%>}/make", name="make")
      * */
     public function makeList(EntityManagerInterface $entityManager): Response
     {
@@ -29,7 +29,7 @@ class MakeController extends AbstractController
     }
 
     /**
-     * @Route("/make/{id<\d+>}", name="make_car_list")
+     * @Route("/{_locale<%app.supported_locales%>}/make/{id<\d+>}", name="make_car_list")
      */
     public function eventSelected(Make $make, EntityManagerInterface $entityManager): Response
     {

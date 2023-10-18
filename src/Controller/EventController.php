@@ -12,7 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class EventController extends AbstractController
 {
     /**
-     * @Route("/event", name="event")
+     * @Route("/{_locale<%app.supported_locales%>}/event", name="event")
      */
     public function mainEvent(EntityManagerInterface $entityManager): Response
     {
@@ -25,7 +25,7 @@ class EventController extends AbstractController
     }
 
     /**
-     * @Route("/event/{id<\d+>}", name="event_car_list")
+     * @Route("/{_locale<%app.supported_locales%>}/event/{id<\d+>}", name="event_car_list")
      */
     public function eventSelected(Event $event, EntityManagerInterface $entityManager): Response
     {

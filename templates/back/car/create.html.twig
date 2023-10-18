@@ -1,6 +1,6 @@
 {% extends 'base-back.html.twig' %}
 
-{% block title %}Car list{% endblock %}
+{% block title %}{{'Car list'|trans}}{% endblock %}
 
 {% block body %}
 <div class="container bg-lighttt pt-5">
@@ -9,9 +9,9 @@
 
         <div class="col">
         {% if car is defined %}
-            <h1>Edit car</h1>
+            <h1>{{'Edit car'|trans}}</h1>
         {% else %}
-            <h1>Add car</h1>
+            <h1>{{'Add car'|trans}}</h1>
         {% endif %}
 
             {{ form_start(carForm) }}
@@ -33,12 +33,12 @@
             {{ form_row(carForm.image) }}
 
         {% if car is defined %}
-            <button class="btn btn-success m-2">Edit</button>
+            <button class="btn btn-success m-2">{{'Edit'|trans}}</button>
         {% else %}
-            <button class="btn btn-success m-2">Add</button>
+            <button class="btn btn-success m-2">{{'Add'|trans}}</button>
         {% endif %}
             {{ form_end(carForm) }}
-            <a href="{{path ('back_car_list')}}"><button class="btn btn-danger m-2">Back</button></a>
+            <a href="{{path ('back_car_list')}}"><button class="btn btn-danger m-2">{{'Back'|trans}}</button></a>
         </div>
     </div>
 </div>

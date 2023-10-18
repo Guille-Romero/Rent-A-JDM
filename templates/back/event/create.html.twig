@@ -1,6 +1,6 @@
 {% extends 'base-back.html.twig' %}
 
-{% block title %}Event list{% endblock %}
+{% block title %}{{'Event list'|trans}}{% endblock %}
 
 {% block body %}
 <div class="container bg-lighttt pt-5">
@@ -9,9 +9,9 @@
 
         <div class="col">
         {% if event is defined %}
-            <h1>Edit event</h1>
+            <h1>{{'Edit event'|trans}}</h1>
         {% else %}
-            <h1>Add event</h1>
+            <h1>{{'Add event'|trans}}</h1>
         {% endif %}
 
             {{ form_start(eventForm) }}
@@ -23,12 +23,12 @@
             {{ form_row(eventForm.car) }}
 
         {% if event is defined %}
-            <button class="btn btn-success m-2">Edit</button>
+            <button class="btn btn-success m-2">{{'Edit'|trans}}</button>
         {% else %}
-            <button class="btn btn-success m-2">Add</button>
+            <button class="btn btn-success m-2">{{'Add'|trans}}</button>
         {% endif %}
             {{ form_end(eventForm) }}
-            <a href="{{path ('back_event_list')}}"><button class="btn btn-danger m-2">Back</button></a>
+            <a href="{{path ('back_event_list')}}"><button class="btn btn-danger m-2">{{'Back'|trans}}</button></a>
         </div>
     </div>
 </div>

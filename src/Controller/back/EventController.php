@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * @Route("/back/event", name="back_event_")
+ * @Route("/{_locale<%app.supported_locales%>}/back/event", name="back_event_")
  */
 class EventController extends AbstractController
 {

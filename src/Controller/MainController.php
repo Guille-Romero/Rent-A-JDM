@@ -14,13 +14,24 @@ use Symfony\Component\HttpFoundation\Request;
 
 class MainController extends AbstractController
 {
+
     /**
-     * @Route("/", name="main")
+     * @Route("/", name="nolocale")
      */
-    public function home(EntityManagerInterface $entityManager): Response
+    public function indexNoLocale(): Response
+    {
+        return $this->redirectToRoute('main', ['_locale' => 'en']);
+    }
+
+    /**
+     * @Route("/{_locale<%app.supported_locales%>}/", name="main")
+     */
+    public function home(EntityManagerInterface $entityManager, Request $request): Response
     {
         $repository = $entityManager->getRepository(Car::class);
         $cars = $repository->findAll();
+
+        dump($request->getLocale());
 
         return $this->render('front/main/index.html.twig', [
             'cars' => $cars,
@@ -28,7 +39,7 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/search", name="search")
+     * @Route("/{_locale<%app.supported_locales%>}/search", name="search")
      */
     public function search(CarRepository $carRepository, EventRepository $eventRepository, Request $request): Response
     {
@@ -56,26 +67,26 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/faqs", name="faqs")
+     * @Route("/{_locale<%app.supported_locales%>}/faqs", name="faqs")
      */
     public function faqs()
     {
-        return $this->render('front/resources/faqs.html.twig');
+        return $this->render('front/support/faqs.html.twig');
     }
 
     /**
-     * @Route("/about", name="about")
+     * @Route("/{_locale<%app.supported_locales%>}/about", name="about")
      */
     public function about()
     {
-        return $this->render('front/resources/about.html.twig');
+        return $this->render('front/support/about.html.twig');
     }
 
     /**
-     * @Route("/contact", name="contact")
+     * @Route("/{_locale<%app.supported_locales%>}/contact", name="contact")
      */
     public function contact()
     {
-        return $this->render('front/resources/contact.html.twig');
+        return $this->render('front/support/contact.html.twig');
     }
 }

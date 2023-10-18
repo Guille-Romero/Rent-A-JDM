@@ -5,7 +5,7 @@
 {% block body %}
 <h1 class = "text-center bg bg-danger text-white p-3 fw-bold">Rent-A-JDM!</h1>
 <div class="container my-4">
-    <h2 class = "text-center fw-bold m-5">Looking for "{{search}}" ?</h2>
+    <h2 class = "text-center fw-bold m-5">{{'Looking for'|trans}} "{{search}}" ?</h2>
 
 
 {# ------------------------EVENTS------------------------------#}
@@ -13,14 +13,14 @@
     {% if events is defined and events is not null %}
 
     <section class = "brands mt-5">
-        <h2>What event do you have in mind?</h2>
-        <p>Here is the list of events containing "{{search}}".</p>
+        <h2>{{'What event do you have in mind'|trans}} ?</h2>
+        <p>{{'Here is the list of events containing'|trans}} "{{search}}".</p>
     </section>
     
     <div class = "row">
         {% for event in events %}
         <div class = "col-4 mt-4">
-            <h3>{{event.name}}</h3>
+            <h3>{{event.name|trans}}</h3>
             <a href="{{path ('event_car_list', {id: event.id})}}"><img class = "col-12" src = "{{event.image}}"></img></a>
         </div>
         {% endfor %}
@@ -28,9 +28,9 @@
 
     {% else %}
         <div class="no-results-message">
-            <p>Oops, it looks like there are no results for your search.</p>
-            <p>Why not check out our exciting events instead?</p>
-            <a href="{{path('event')}}" class="btn btn-danger">Explore Events</a>
+            <p>{{'Oops, it looks like there are no results for your search'|trans}}.</p>
+            <p>{{'Why not check out our exciting events instead'|trans}} ?</p>
+            <a href="{{path('event')}}" class="btn btn-danger">{{'Explore Events'|trans}}</a>
         </div>
     {% endif %}
 
@@ -41,8 +41,8 @@
     {% if cars is defined and cars is not null %}
 
     <section class="brands my-5">
-        <h2>Pick Your Poison!</h2>
-        <p>Take a look at our stunning collection of available cars containing "{{search}}".</p>
+        <h2>{{'Pick Your Poison'|trans}} !</h2>
+        <p>{{'Take a look at our stunning collection of available cars containing'|trans}} "{{search}}".</p>
     </section>
     <div class = "row">
     {% for car in cars %}
@@ -54,30 +54,30 @@
                 <strong class="d-inline-block text-primary">{{ car.make.name }}</strong>
                 <h3 class="mb-4 text-decoration-underline fw-bold">{{ car.make.name }} {{ car.model }}</h3>
                 <div class="col">
-                    <h4>Chassis</h4>
+                    <h4>{{'Chassis'|trans}}</h4>
                     <p>
-                        <strong>Chassis:</strong>
+                        <strong>{{'Chassis'|trans}}:</strong>
                         <span class="badge bg-warning text-dark">{{ car.chassis }}</span>
                     </p>
                     <p>
-                        <strong>Color:</strong>
+                        <strong>{{'Color'|trans}}:</strong>
                         <span class="badge bg-info text-dark">{{ car.color }}</span>
                     </p>
 
                     <dl class="row">
-                        <dt class="col-sm-12">Year:</dt>
+                        <dt class="col-sm-12">{{'Year'|trans}}:</dt>
                         <dd class="col-sm-12">
                         {{ car.year }}
                         </dd>
                     </dl>
                 </div>
                 <div class="col position-relative">
-                    <h4>Engine</h4>
+                    <h4>{{'Engine'|trans}}</h4>
             
-                    <p class="m-0"><strong>code:</strong> {{ car.engine }}</p>
-                    <p ><strong>Horsepower:</strong> {{ car.horsepower }}hp</p>
+                    <p class="m-0"><strong>{{'Code'|trans}}:</strong> {{ car.engine }}</p>
+                    <p ><strong>{{'Horsepower'|trans}}:</strong> {{ car.horsepower }}hp</p>
 
-                    <a href="" class="btn btn-danger text-white position-absolute mb-4 bottom-0 end-0 translate-middle-x">Select Car</a>
+                    <a href="" class="btn btn-danger text-white position-absolute mb-4 bottom-0 end-0 translate-middle-x">{{'Select Car'|trans}}</a>
                 </div>
             </div>
         </div>
@@ -85,12 +85,12 @@
     {% else %}
     <div class = "row">
         <div class="no-results-message mb-5">
-            <p>Oops, it looks like there are no cars available at the moment.</p>
-            <p>Why not explore our exciting car collection instead?</p>
-            <a href="{{ path('cars') }}" class="btn btn-danger">Explore Cars</a>
+            <p>{{'Oops, it looks like there are no results for your search'|trans}}.</p>
+            <p>{{'Why not explore our exciting car collection instead'|trans}} ?</p>
+            <a href="{{ path('cars') }}" class="btn btn-danger">{{'Explore Cars'|trans}}</a>
         </div>
     {% endif %}
 
-        <a href="{{ path('main') }}" class="btn btn-danger">Back home</a>
+        <a href="{{ path('main') }}" class="btn btn-danger">{{'Back home'|trans}}</a>
     </div>
 {% endblock %}

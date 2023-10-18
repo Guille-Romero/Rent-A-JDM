@@ -1,18 +1,18 @@
 {% extends 'base-back.html.twig' %}
 
-{% block title %}Liste des marques{% endblock %}
+{% block title %}{{'Make list'|trans}}{% endblock %}
 
 {% block body %}
 <div class="container my-4">
-    <a href="{{path ('back_make_create')}}" class="btn btn-success float-end">Add make</a>
+    <a href="{{path ('back_make_create')}}" class="btn btn-success float-end">{{'Add make'|trans}}</a>
 
-    <h2>Make list</h2>
+    <h2>{{'Make list'|trans}}</h2>
     <table class="table table-hover mt-4">
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Manufacturer</th>
-                <th scope="col">Image</th>
+                <th scope="col">{{'Manufacturer'|trans}}</th>
+                <th scope="col">{{'Image'|trans}}</th>
                 <th scope="col"></th>
 
                 <th scope="col"></th>
@@ -34,8 +34,8 @@
                             <i class="bi bi-trash"></i>
                         </button>
                         <div class="dropdown-menu bg-dark text-white">
-                            <p class="ps-3">you sure?!</p>
-                            <a class="dropdown-item bg-danger" href="{{path ('back_make_delete', {id: make.id})}}" data-toggle="dropdown">YES!</a>
+                            <p class="ps-3">{{'you sure'|trans}}?!</p>
+                            <a class="dropdown-item bg-danger" href="{{path ('back_make_delete', {id: make.id})}}" data-toggle="dropdown">{{'YES'|trans}}!</a>
                         </div>
                     </div>
                 </td>
@@ -45,7 +45,7 @@
     </table>
     <div class="col-12 p-4 d-flex flex-column position-static bg-light">
       
-        <a href="{{ path('back_main') }}" class="btn btn-danger">Back</a>
+        <a href="{{ path('back_main') }}" class="btn btn-danger">{{'Back'|trans}}</a>
     </div>
 </div>
 {% endblock %}

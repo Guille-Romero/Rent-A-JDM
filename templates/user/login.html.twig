@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in{% endblock %}
+{% block title %}{{'Log in'|trans}}{% endblock %}
 
 {% block body %}
     <div class = "container m-4">
@@ -8,16 +8,16 @@
             <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         {% endif %}
 
-        <h1 class = "mb-4 ms-5">Log in</h1>
+        <h1 class = "mb-4 ms-5">{{'Log in'|trans}}</h1>
 
-        <form action="{{ path('login') }}" method="post" class="m-5">
-            <label for="username" class="mt-4">Username :</label></br>
+        <form action="{{ path('login', {'_locale': app.request.locale}) }}" method="POST" class="m-5">
+            <label for="username" class="mt-4">{{'Username'|trans}} :</label></br>
             <input type="text" id="username" name="_username" value="{{ last_username }}" class="w-100"></br>
 
-            <label for="password" class="mt-4">Password :</label></br>
+            <label for="password" class="mt-4">{{'Password'|trans}} :</label></br>
             <input type="password" id="password" name="_password" class="w-100"></br>
 
-            <button type="submit" class="btn btn-danger mt-5 ">Log in</button>
+            <button type="submit" class="btn btn-danger mt-5 ">{{'Log in'|trans}}</button>
         </form>
     </div>
 {% endblock %}

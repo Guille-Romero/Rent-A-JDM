@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Sign in{% endblock %}
+{% block title %}{{'Your Profile'|trans}}{% endblock %}
 
 {% block body %}
-<h1 class = "text-center bg bg-danger text-white p-3 fw-bold">Your Profile</h1>
+<h1 class = "text-center bg bg-danger text-white p-3 fw-bold">{{'Your Profile'|trans}}</h1>
     <div class="m-4">
         <div class="profile-header">
             
@@ -22,10 +22,10 @@
         {% endif %}
 
             <div class=" col-8 profile-details">
-                <h2 class="username">Username : {{ app.user.username }}</h2>
-                <p class="email"> Email : {{ app.user.email }}</p>
+                <h3 class="username mt-5"><strong>{{'Username'|trans}} :</strong> {{ app.user.username }}</h3>
+                <h3 class="email mt-5"><strong>{{'Email'|trans}} :</strong> {{ app.user.email }}</h3>
             </div>
-            <a href="{{path('edit')}}" class="btn btn-danger mt-5">Edit</a>
+            <a href="{{path('edit')}}" class="btn btn-danger mt-5">{{'Edit'|trans}}</a>
         </div>
     </div>
 

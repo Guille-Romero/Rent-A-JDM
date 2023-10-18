@@ -6,9 +6,14 @@
 parameters:    
     locale: en_GB
     app.locales: en_GB|es_ES|fr_FR
+    app.supported_locales: 'en|es|fr'
 
 framework:
-    translator:  { fallbacks: ["%locale%"] }
+    translator:
+        fallbacks: ["%locale%"]
+    
+        paths:
+            - '%kernel.project_dir%/translations'
 
 services:
     # default configuration for services in *this* file

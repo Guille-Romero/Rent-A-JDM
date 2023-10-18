@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * @Route("/back/make", name="back_make_")
+ * @Route("/{_locale<%app.supported_locales%>}/back/make", name="back_make_")
  * */
 class MakeController extends AbstractController
 {

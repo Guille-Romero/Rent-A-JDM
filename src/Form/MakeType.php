@@ -15,7 +15,7 @@ class MakeType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, [
-                'label' => 'Marque',
+                'label' => 'Manufacturer',
                 'constraints' => [
                     new NotBlank(),
                 ]

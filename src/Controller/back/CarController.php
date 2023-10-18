@@ -15,7 +15,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
 /**
- * @Route("/back/car", name="back_car_")
+ * @Route("/{_locale<%app.supported_locales%>}/back/car", name="back_car_")
  */
 class CarController extends AbstractController
 {

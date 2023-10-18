@@ -1,25 +1,25 @@
 {% extends 'base-back.html.twig' %}
 
-{% block title %}Car list {% endblock %}
+{% block title %}{{'Car list'|trans}}{% endblock %}
 
 {% block body %}
 <div class="container my-4">
-    <a href="{{path ('back_car_create')}}" class="btn btn-success float-end">Add car</a>
+    <a href="{{path ('back_car_create')}}" class="btn btn-success float-end">{{'Add car'|trans}}</a>
 {% if make is defined%}
-    <h2>{{make.name}} cars</h2>
+    <h2>{{make.name}} {{'cars'|trans}}</h2>
 {% else %}
-    <h2>Car list</h2>
+    <h2>{{'Car list'|trans}}</h2>
 {% endif %}
     <table class="table table-hover mt-4">
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Make</th>
-                <th scope="col">Model</th>
-                <th scope="col">Color</th>
-                <th scope="col">Year</th>
-                <th scope="col">Engine</th>
-                <th scope="col">Horsepower</th>
+                <th scope="col">{{'Make'|trans}}</th>
+                <th scope="col">{{'Model'|trans}}</th>
+                <th scope="col">{{'Color'|trans}}</th>
+                <th scope="col">{{'Year'|trans}}</th>
+                <th scope="col">{{'Engine'|trans}}</th>
+                <th scope="col">{{'Horsepower'|trans}}</th>
                 <th scope="col"></th>
             </tr>
         </thead>
@@ -45,8 +45,8 @@
                             <i class="bi bi-trash"></i>
                         </button>
                         <div class="dropdown-menu bg-dark text-white">
-                            <p class="ps-3">you sure?!</p>
-                            <a class="dropdown-item bg-danger" href="{{path ('back_car_delete', {id: car.id})}}" data-toggle="dropdown">YES!</a>
+                            <p class="ps-3">{{'you sure'|trans}} ?!</p>
+                            <a class="dropdown-item bg-danger" href="{{path ('back_car_delete', {id: car.id})}}" data-toggle="dropdown">{{'YES'|trans}} !</a>
                         </div>
                     </div>
                 </td>
@@ -56,9 +56,9 @@
     </table>
     <div class="col-12 p-4 d-flex flex-column position-static bg-light">
         {% if make is defined%}
-           <a href="{{ path('back_make_read', {'make': make}) }}" class="btn btn-danger">Back</a>
+           <a href="{{ path('back_make_read', {'make': make}) }}" class="btn btn-danger">{{'Back'|trans}}</a>
         {% else %}
-            <a href="{{ path('back_main') }}" class="btn btn-danger">Back</a>
+            <a href="{{ path('back_main') }}" class="btn btn-danger">{{'Back'|trans}}</a>
         {% endif %}
         
     </div>

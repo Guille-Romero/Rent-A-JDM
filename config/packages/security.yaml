@@ -20,14 +20,17 @@ security:
 
             logout:
                 path: logout
+                target: main
 
             form_login:
                 # "app_login" is the name of the route created previously
                 login_path: login
                 check_path: login
+                default_target_path: main
+                always_use_default_target_path: true
 
     access_control:
-        - { path: ^/login, roles: PUBLIC_ACCESS }
+        - { path: ^/(en|es|fr)/login, roles: PUBLIC_ACCESS }
         - { path: ^/back, roles: [ROLE_ADMIN, ROLE_MANAGER] }
         - { path: ^/, roles: PUBLIC_ACCESS }
 

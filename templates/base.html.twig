@@ -16,7 +16,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-4">
             <a class="navbar-brand" href="{{path('main')}}">Rent-A-JDM</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-bs-controls="navbarColor01" aria-bs-expanded="false" aria-bs-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -26,21 +26,27 @@
                     <a class="nav-link" href="{{path('main')}}">Home <span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="{{ path ('event')}}">Events</a>
+                    <a class="nav-link" href="{{ path ('event')}}">{{'Events'|trans}}</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="{{ path ('make')}}">Makes</a>
+                    <a class="nav-link" href="{{ path ('make')}}">{{'Makes'|trans}}</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="{{ path ('cars')}}">Cars</a>
+                    <a class="nav-link" href="{{ path ('cars')}}">{{'Cars'|trans}}</a>
                     </li>
                 </ul>
-                <div class="lang-selector ms-5">
-                    <select class="form-select" aria-label="">
-                        <option value="1">English</option>
-                        <option value="2">Spanish</option>
-                        <option value="3">French</option>
-                    </select>
+                <div class="navbar-nav lang-selector ms-5">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown-language" role="button"
+                            data-bs-toggle="dropdown">
+                            <span>{{ app.request.locale|locale_name(app.request.locale)|u.title }}</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'en'})) }}">English</a></li>
+                            <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'es'})) }}">Español</a></li>
+                            <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'fr'})) }}">Français</a></li>
+                        </ul>
+                    </li>
                 </div>
             </div>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -49,12 +55,12 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown">
-                            <span>Shopping cart</span>
+                            <span>{{'Shopping cart'|trans}}</span>
                             <i class="bi bi-cart4"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Items</a></li>
-                            <li><a class="dropdown-item" href="{{path('back_main')}}">Show details</a></li>
+                            <li><a class="dropdown-item" href="#">{{'Items'|trans}}</a></li>
+                            <li><a class="dropdown-item" href="{{path('back_main')}}">{{'Show details'|trans}}</a></li>
                         </ul>
                     </li>
 
@@ -65,7 +71,7 @@
                             <i class="bi bi-person-circle"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{path('profile')}}">Profile</a></li>
+                            <li><a class="dropdown-item" href="{{path('profile')}}">{{'Profile'|trans}}</a></li>
                         {% if is_granted('ROLE_MANAGER') %}
                             <li><a class="dropdown-item" href="{{path('back_main')}}">Backoffice</a></li>
                         {% endif %}
@@ -75,21 +81,21 @@
 
                     <li class="nav-item">
                         <a class="nav-link me-3">
-                            <span>Visitor</span>
+                            <span>{{'Visitor'|trans}}</span>
                             <i class="bi bi-person-circle"></i>
                         </a>
                     </li>
                 {% endif %}
                 </ul>
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <a href = "{{path ('logout')}}"><button type="button" class="btn btn-danger me-2">Log out</button></a>
+                    <a href = "{{path ('logout', {'_locale': app.request.locale})}}"><button type="button" class="btn btn-danger me-2">{{'Log out'|trans}}</button></a>
                 {% else %}
-                    <a href = "{{path ('login')}}"><button type="button" class="btn btn-danger me-2">Log in</button></a>
-                    <a href = "{{path ('register')}}"><button type="button" class="btn btn-danger me-2">Sign in</button></a>
+                    <a href = "{{path ('login')}}"><button type="button" class="btn btn-danger me-2">{{'Log in'|trans}}</button></a>
+                    <a href = "{{path ('register')}}"><button type="button" class="btn btn-danger me-2">{{'Sign in'|trans}}</button></a>
                 {% endif %}
 
                 <form class="d-flex" action="{{path('search')}}">
-                    <input class="form-control form-control-sm me-2" name="search" type="search" placeholder="Search...">
+                    <input class="form-control form-control-sm me-2" name="search" type="search" placeholder="{{'Search'|trans}}...">
                     <button class="btn btn-outline-danger" type="submit"><i class="bi bi-search"></i></button>
                 </form>
         </nav>
@@ -100,39 +106,39 @@
     <footer class="mt-5">
         <div class="row bg-dark text-white p-4">
         <div class="col-4 col-md-2 mb-3">
-            <h5>Main</h5>
+            <h5>{{'Main'|trans}}</h5>
             <ul class="nav flex-column">
             <li class="nav-item mb-2"><a href="{{path('main')}}" class="nav-link p-0 text-muted">Home</a></li>
-            <li class="nav-item mb-2"><a href="{{ path ('event')}}" class="nav-link p-0 text-muted">Events</a></li>
-            <li class="nav-item mb-2"><a href="" class="nav-link p-0 text-muted">Brands</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Cars</a></li>
+            <li class="nav-item mb-2"><a href="{{ path ('event')}}" class="nav-link p-0 text-muted">{{'Events'|trans}}</a></li>
+            <li class="nav-item mb-2"><a href="{{path('make')}}" class="nav-link p-0 text-muted">{{'Makes'|trans}}</a></li>
+            <li class="nav-item mb-2"><a href="{{path('cars')}}" class="nav-link p-0 text-muted">{{'Cars'|trans}}</a></li>
             </ul>
         </div>
 
         <div class="col-4 col-md-2 mb-3">
-            <h5>Get in Touch</h5>
+            <h5>{{'Get In Touch'|trans}}</h5>
             <ul class="nav flex-column">
             <li class="nav-item mb-2"><a href="{{path('faqs')}}" class="nav-link p-0 text-muted">FAQs</a></li>
-            <li class="nav-item mb-2"><a href="{{path('about')}}" class="nav-link p-0 text-muted">About</a></li>
-            <li class="nav-item mb-2"><a href="{{path('contact')}}" class="nav-link p-0 text-muted">Contact</a></li>
+            <li class="nav-item mb-2"><a href="{{path('about')}}" class="nav-link p-0 text-muted">{{'About'|trans}}</a></li>
+            <li class="nav-item mb-2"><a href="{{path('contact')}}" class="nav-link p-0 text-muted">{{'Contact'|trans}}</a></li>
             </ul>
         </div>
 
         <div class="col-md-5 offset-md-1 mb-3">
             <form>
-            <h5>Subscribe to our newsletter</h5>
-            <p>Monthly digest of what's new and exciting from us.</p>
+            <h5>{{'Subscribe to our'|trans}} newsletter</h5>
+            <p>{{'Monthly digest of what\'s new and exciting from us'|trans}}.</p>
             <div class="d-flex flex-column flex-sm-row w-100 gap-2">
                 <label for="newsletter1" class="visually-hidden">Email address</label>
-                <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                <button class="btn btn-danger" type="button">Subscribe</button>
+                <input id="newsletter1" type="text" class="form-control" placeholder="{{'Email address'|trans}}">
+                <button class="btn btn-danger" type="button">{{'Subscribe'|trans}}</button>
             </div>
             </form>
         </div>
         </div>
 
         <div class="d-flex flex-column flex-sm-row justify-content-between py-4 p-4 bg-danger text-white">
-        <p>© 2023 Rent-A-JDM, Inc. All rights reserved.</p>
+        <p>© 2023 Rent-A-JDM, Inc. {{'All rights reserved'|trans}}.</p>
         <ul class="list-unstyled d-flex">
             <li class="ms-3"><a class="link-light" href="#"><i class="bi bi-twitter"></i></a></li>
             <li class="ms-3"><a class="link-light" href="#"><i class="bi bi-instagram"></i></a></li>

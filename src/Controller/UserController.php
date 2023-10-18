@@ -15,15 +15,25 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 class UserController extends AbstractController
 {
     /**
-     * @Route("/login", name="login")
+     * @Route("/{_locale<%app.supported_locales%>}/login", name="login", methods={"GET", "POST"})
      */
-    public function index(AuthenticationUtils $authenticationUtils): Response
+    public function login(AuthenticationUtils $authenticationUtils, Request $request): Response
     {
+        $locale = $request->getLocale();
+
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
 
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
+
+        if ($request->isMethod('POST')){
+            
+            $request->setLocale($locale);
+
+           dd($locale);
+        }
+
         return $this->render('user/login.html.twig', [
             'last_username' => $lastUsername,
             'error'         => $error,
@@ -31,7 +41,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/register", name="register")
+     * @Route("/{_locale<%app.supported_locales%>}/register", name="register")
      */
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
@@ -62,16 +72,23 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/logout", name="logout")
+     * @Route("/{_locale<%app.supported_locales%>}/logout", name="logout")
      */
-    public function logout(): void
+    public function logout(Request $request)
     {
-        // controller can be blank: it will never be called!
-        throw new \Exception('Don\'t forget to activate logout in security.yaml');
+        
+        // Get the current locale
+        $locale = $request->getLocale();
+        dd($locale);
+        // Create the target URL with the current locale
+        $target = $this->generateUrl('main', ['_locale' => $locale]);
+    
+        return $this->redirect($target);
+        
     }
 
     /**
-     * @Route("/profile", name="profile")
+     * @Route("/{_locale<%app.supported_locales%>}/profile", name="profile")
      */
     public function profile()
     {
@@ -80,7 +97,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/edit", name="edit")
+     * @Route("/{_locale<%app.supported_locales%>}/edit", name="edit")
      */
     public function edit(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager)
     {
