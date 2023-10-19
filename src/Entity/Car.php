@@ -65,6 +65,11 @@ class Car
      */
     private $events;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $price;
+
     public function __construct()
     {
         $this->events = new ArrayCollection();
@@ -194,6 +199,18 @@ class Car
         if ($this->events->removeElement($event)) {
             $event->removeCar($this);
         }
+
+        return $this;
+    }
+
+    public function getPrice(): ?int
+    {
+        return $this->price;
+    }
+
+    public function setPrice(?int $price): self
+    {
+        $this->price = $price;
 
         return $this;
     }

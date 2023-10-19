@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Cart;
 use App\Entity\User;
 use App\Form\RegistrationFormType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -51,17 +52,25 @@ class UserController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+            // Create and persist a Cart for the user upon register
+            $cart = new Cart();
+            $cart->addUser($user);
+
+            // Persist the cart
+            $entityManager->persist($cart);
+            
             $user->setPassword(
-            $userPasswordHasher->hashPassword(
-                    $user,
-                    $form->get('plainPassword')->getData()
-                )
-            );
+                $userPasswordHasher->hashPassword(
+                        $user,
+                        $form->get('plainPassword')->getData()
+                    )
+                );
 
             $entityManager->persist($user);
+
             $entityManager->flush();
             
-            $this->addFlash('success', 'Signed in successfully');
+            $this->addFlash('success', 'Signed in successfully, please log into your account');
 
             return $this->redirectToRoute('login');
         }

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -41,6 +43,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string", length=255)
      */
     private $email;
+
+    /**
+     * @ORM\OneToOne(targetEntity=Cart::class, mappedBy="user", cascade={"persist", "remove"})
+     */
+    private $cart;
+
+    public function __construct()
+    {
+        $this->cart = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -136,5 +148,41 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->email = $email;
 
         return $this;
+    }
+
+    /**
+     * @return Collection<int, Cart>
+     */
+    public function getCart()
+    {
+        return $this->cart;
+    }
+
+    public function addCart(?Cart $cart): self
+    {
+        $this->cart = $cart;
+
+        if ($cart !== null && $cart->getUser() !== $this) {
+            $cart->addUser($this);
+        }
+
+        return $this;
+    }
+    
+    public function removeCart(Cart $cart): self
+    {
+        if ($this->cart->removeElement($cart)) {
+            $cart->removeUser($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasCart(): bool
+    {
+        return $this->cart !== null;
     }
 }

@@ -70,7 +70,7 @@
                     <li class="nav-item">
                         <a class="nav-link me-3">
                             <span>{{'Visitor'|trans}}</span>
-                            <i class="bi bi-person-circle"></i>
+                            <i class="bi bi-person-circle"></i> 
                         </a>
                     </li>
                 {% endif %}
@@ -89,6 +89,13 @@
         </nav>
     </header>
     <main>
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
         {% block body %}{% endblock %}
     </main>
     </body>

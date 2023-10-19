@@ -34,6 +34,11 @@ class Event
      */
     private $car;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $supplement;
+
     public function __construct()
     {
         $this->car = new ArrayCollection();
@@ -89,6 +94,18 @@ class Event
     public function removeCar(Car $car): self
     {
         $this->car->removeElement($car);
+
+        return $this;
+    }
+
+    public function getSupplement(): ?int
+    {
+        return $this->supplement;
+    }
+
+    public function setSupplement(?int $supplement): self
+    {
+        $this->supplement = $supplement;
 
         return $this;
     }

@@ -2,6 +2,7 @@
 
 namespace App\Controller\Back;
 
+use App\Entity\Cart;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Form\RegistrationFormType;
@@ -48,7 +49,7 @@ class UserController extends AbstractController
 
             $entityManager->flush();
 
-            $this->addFlash('success', 'Marque ajoutée');
+            $this->addFlash('success', 'User created successfully');
 
 
             return $this->redirectToRoute('back_user_list');
@@ -75,7 +76,7 @@ class UserController extends AbstractController
 
             $entityManager->flush();
 
-            $this->addFlash('success', 'Marque ajoutée');
+            $this->addFlash('success', 'User updated successfully');
 
 
             return $this->redirectToRoute('back_user_list');
@@ -97,12 +98,48 @@ class UserController extends AbstractController
             throw $this->createNotFoundException('User not found');
         }
     
+        $cart = $user->getCart();
+        
+        // Remove the user's cart from the database
+        if ($cart) {
+            $entityManager->remove($cart);
+        }
+
         // Remove the user from the database
         $entityManager->remove($user);
         $entityManager->flush();
     
         $this->addFlash('success', 'User deleted successfully');
     
+        return $this->redirectToRoute('back_user_list');
+    }
+
+    /**
+     * @Route("/cart-for/{id<\d+>}", name="add_cart")
+     */
+    public function createCartForUser(User $user, EntityManagerInterface $entityManager): Response
+    {
+        if ($user->hasCart()){
+            $this->addFlash('danger', 'User has already a shopping cart');
+        }
+        else{
+            $repository = $entityManager->getRepository(User::class);
+
+            // Replace 'username' with the actual identifier you use to find the user
+            $userCart = $repository->findOneBy(['username' => $user->getUsername()]);
+
+            if ($userCart) {
+                // Create a new Cart entity
+                $cart = new Cart();
+                $cart->addUser($userCart);
+                
+                // Persist the cart
+                $entityManager->persist($cart);
+                $entityManager->flush();
+
+                $this->addFlash('success', 'Cart added successfully');
+            }
+        }
         return $this->redirectToRoute('back_user_list');
     }
 }

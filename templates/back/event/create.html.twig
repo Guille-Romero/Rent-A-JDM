@@ -22,6 +22,8 @@
 
             {{ form_row(eventForm.car) }}
 
+            {{ form_row(eventForm.supplement) }}
+
         {% if event is defined %}
             <button class="btn btn-success m-2">{{'Edit'|trans}}</button>
         {% else %}

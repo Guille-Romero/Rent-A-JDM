@@ -64,7 +64,7 @@ class CarController extends AbstractController
 
             $entityManager->flush();
 
-            $this->addFlash('success', 'Voiture ajoutée');
+            $this->addFlash('success', 'Car created successfully');
 
 
             return $this->redirectToRoute('back_car_list');
@@ -101,7 +101,7 @@ class CarController extends AbstractController
 
             $entityManager->flush();
 
-            $this->addFlash('success', 'Voiture editée');
+            $this->addFlash('success', 'Car updated successfully');
 
 
             return $this->redirectToRoute('back_car_list');

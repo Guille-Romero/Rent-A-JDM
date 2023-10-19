@@ -45,7 +45,7 @@ class EventController extends AbstractController
 
             $entityManager->flush();
 
-            $this->addFlash('success', 'Voiture ajoutée');
+            $this->addFlash('success', 'Event created successfully');
 
 
             return $this->redirectToRoute('back_event_list');
@@ -82,7 +82,7 @@ class EventController extends AbstractController
 
             $entityManager->flush();
 
-            $this->addFlash('success', 'Voiture editée');
+            $this->addFlash('success', 'Event updated successfully');
 
 
             return $this->redirectToRoute('back_event_list');

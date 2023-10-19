@@ -34,6 +34,7 @@ class CarType extends AbstractType
             ->add('engine')
             ->add('horsepower')
             ->add('image')
+            ->add('price')
         ;
     }
 

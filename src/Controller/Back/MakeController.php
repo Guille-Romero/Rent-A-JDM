@@ -46,7 +46,7 @@ class MakeController extends AbstractController
 
             $entityManager->flush();
 
-            $this->addFlash('success', 'Marque ajoutée');
+            $this->addFlash('success', 'Make created successfully');
 
 
             return $this->redirectToRoute('back_make_list');
@@ -86,7 +86,7 @@ class MakeController extends AbstractController
 
             $entityManager->flush();
 
-            $this->addFlash('success', 'Marque ajoutée');
+            $this->addFlash('success', 'Make updated successfully');
 
 
             return $this->redirectToRoute('back_make_list');

@@ -29,6 +29,7 @@ class EventType extends AbstractType
                     new NotBlank(),
                 ]
             ])
+            ->add('supplement')
         ;
     }
 

@@ -1,6 +1,6 @@
 {% extends 'base-back.html.twig' %}
 
-{% block title %}{{'Event List'|trans}}{% endblock %}
+{% block title %}{{'Event list'|trans}}{% endblock %}
 
 {% block body %}
 <div class="container my-4">
@@ -12,7 +12,7 @@
                 <th scope="col">#</th>
                 <th scope="col">{{'Name'|trans}}</th>
                 <th scope="col">{{'Car'|trans}}</th>
-                <th scope="col">{{'Image'|trans}}</th>
+                <th scope="col">{{'Supplement'|trans}}</th>
                 <th scope="col"></th>
             </tr>
         </thead>
@@ -25,7 +25,7 @@
                         {{ car.make.name}} {{ car.model }} {{ car.chassis }} 
                         {% if not loop.last %}, {% endif %}
                     {% endfor %}</td>
-                <td>{{event.image}}</td>
+                <td>{{event.supplement}}</td>
                 <td class="text-end">
                     <a href="{{path ('back_event_update', {id: event.id})}}" class="btn btn-sm btn-warning">
                         <i class="bi bi-pencil"></i>

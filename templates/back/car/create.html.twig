@@ -32,6 +32,8 @@
 
             {{ form_row(carForm.image) }}
 
+            {{ form_row(carForm.price) }}
+
         {% if car is defined %}
             <button class="btn btn-success m-2">{{'Edit'|trans}}</button>
         {% else %}
