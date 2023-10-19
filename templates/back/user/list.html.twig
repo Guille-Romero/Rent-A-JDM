@@ -1,0 +1,57 @@
+{% extends 'base-back.html.twig' %}
+
+{% block title %}{{'Make list'|trans}}{% endblock %}
+
+{% block body %}
+<div class="container my-4">
+    <a href="{{path ('back_user_create')}}" class="btn btn-success float-end">{{'Add User'|trans}}</a>
+
+    <h2>{{'User list'|trans}}</h2>
+    <table class="table table-hover mt-4">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">{{'Username'|trans}}</th>
+                <th scope="col">{{'Email'|trans}}</th>
+                <th scope="col">{{'Role'|trans}}</th>
+                <th scope="col"></th>
+
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <th scope="row">{{user.id}}</th>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                <td>
+                    {% for role in user.roles %}
+                        {{role}}
+                    {% endfor %}
+                </td>
+ 
+                <td class="text-end">
+                    <a href="{{path ('back_user_update', {id: user.id})}}" class="btn btn-sm btn-warning">
+                        <i class="bi bi-pencil"></i>
+                    </a>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                        <div class="dropdown-menu bg-dark text-white">
+                            <p class="ps-3">{{'you sure'|trans}}?!</p>
+                            <a class="dropdown-item bg-danger" href="{{path ('back_user_delete', {id: user.id})}}" data-toggle="dropdown">{{'YES'|trans}}!</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="col-12 p-4 d-flex flex-column position-static bg-light">
+      
+        <a href="{{ path('back_main') }}" class="btn btn-danger">{{'Back'|trans}}</a>
+    </div>
+</div>
+{% endblock %}

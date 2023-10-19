@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\back;
+namespace App\Controller\Back;
 
 use App\Entity\Event;
 use App\Form\EventType;

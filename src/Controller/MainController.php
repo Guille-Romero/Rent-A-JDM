@@ -20,6 +20,7 @@ class MainController extends AbstractController
      */
     public function indexNoLocale(): Response
     {
+        // method to redirect from main page with no locale to main page with locale
         return $this->redirectToRoute('main', ['_locale' => 'en']);
     }
 
@@ -30,8 +31,6 @@ class MainController extends AbstractController
     {
         $repository = $entityManager->getRepository(Car::class);
         $cars = $repository->findAll();
-
-        dump($request->getLocale());
 
         return $this->render('front/main/index.html.twig', [
             'cars' => $cars,

@@ -1,0 +1,37 @@
+{% extends 'base-back.html.twig' %}
+
+{% block title %}{{'Make list'|trans}}{% endblock %}
+
+{% block body %}
+<div class="container bg-lighttt pt-5">
+
+    <div class="row mb-2">
+
+        <div class="col">
+        {% if user is defined %}
+            <h1>{{'Edit user'|trans}}</h1>
+        {% else %}
+            <h1>{{'Add user'|trans}}</h1>
+        {% endif %}
+
+            {{ form_start(userForm) }}
+            
+            {{ form_row(userForm.username) }}
+
+            {{ form_row(userForm.email) }}
+
+            {{ form_row(userForm.roles) }}
+
+            {{ form_row(userForm.password) }}
+
+        {% if user is defined %}
+            <button class="btn btn-success m-2">{{'Edit'|trans}}</button>
+        {% else %}
+            <button class="btn btn-success m-2">{{'Add'|trans}}</button>
+        {% endif %}
+            {{ form_end(userForm) }}
+            <a href="{{path ('back_user_list')}}"><button class="btn btn-danger m-2">{{'Back'|trans}}</button></a>
+        </div>
+    </div>
+</div>
+{% endblock %}

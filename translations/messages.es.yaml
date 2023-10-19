@@ -20,7 +20,7 @@ All rights reserved: Todos los derechos reservados
 
 #* ---------------------------------------------- Navbar right side  ----------------------------------------------------
 
-Shopping cart: Carrito de compras
+Shopping cart: Carrito
 Items: Artículos
 Show details: Mostrar detalles
 Visitor: Visitante
@@ -203,6 +203,11 @@ Edit user profile: Editar perfil de usuario
 Your Profile: Tu Perfil
 Edit: Editar
 
+# backoffice
+
+User list: Lista de usuarios
+Add User: Añadir Usuario
+Role: Rol
 
 #* ----------------------------------------------------  Search page  ----------------------------------------------------
 

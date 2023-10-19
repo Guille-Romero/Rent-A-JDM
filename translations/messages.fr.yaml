@@ -58,7 +58,7 @@ It can be for: Cela peut être pour
 
 A memorable wedding experience, with or without a chauffeur, depending on how you want to roll on your special day: Une expérience de mariage mémorable, avec ou sans chauffeur, en fonction de la manière dont vous souhaitez rouler lors de votre journée spéciale 
 
-A unique gender reveal with personalized tire smoke color options:  Une révélation de genre unique avec des options de fumée de pneu personnalisée
+A unique gender reveal with personalized tire smoke color options:  Un gender reveal unique avec des options de fumée de pneu personnalisée
 
 Photoshoots or film productions:  Des séances photo ou des productions cinématographiques
 
@@ -74,7 +74,7 @@ If you have a specific event request or need pricing information, please don't h
 # Event names
 
 Wedding: Mariage
-Gender reveal: Révélation de genre
+Gender reveal: Gender reveal
 Photo shoot: Séance photo
 Filmmaking: Production cinématographique
 Car ride gift: Cadeau de tour en voiture
@@ -203,6 +203,11 @@ Edit user profile: Modifier le profil de l'utilisateur
 Your Profile: Votre profil
 Edit: Modifier
 
+# backoffice
+
+User list: Liste d'utilisateurs
+Add User: Ajouter un Utilisateur
+Role: Role
 
 #* ----------------------------------------------------  Search page  ----------------------------------------------------
 
