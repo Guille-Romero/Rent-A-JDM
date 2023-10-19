@@ -1,24 +1,24 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}FAQs{% endblock %}
+{% block title %}{{'About'|trans}}{% endblock %}
 
 {% block body %}
 <h1 class = "text-center bg bg-danger text-white p-3 fw-bold">Rent-A-JDM!</h1>
     <div class = "container p-4">
-        <h1 class="border-bottom border-dark pb-4">About Us</h1>
+        <h1 class="border-bottom border-dark pb-4">{{'About Us'|trans}}</h1>
 
         <div class="faq mt-5">
-            <p>Welcome to Rent-A-JDM! We're a passionate team of car enthusiasts dedicated to making your dream car experience a reality.</p>
+            <p>{{'Welcome to Rent-A-JDM! We\'re a passionate team of car enthusiasts dedicated to making your dream car experience a reality'|trans}}.</p>
 
-            <h2 class = "mt-5">Our Mission</h2>
-            <p>Our mission is to provide you with the opportunity to drive iconic JDM (Japanese Domestic Market) cars and create unforgettable memories. We're committed to delivering the best in JDM car rental and sharing our love for these vehicles with our customers.</p>
+            <h2 class = "mt-5">{{'Our Mission'|trans}}</h2>
+            <p>{{'Our mission is to provide you with the opportunity to drive iconic JDM (Japanese Domestic Market) cars and create unforgettable memories. We\'re committed to delivering the best in JDM car rental and sharing our love for these vehicles with our customers'|trans}}.</p>
 
-            <h2 class = "mt-5">Our Team</h2>
-            <p>Meet the team behind Rent-A-JDM! We're a group of car enthusiasts, mechanics, and customer service experts who are here to make your experience exceptional. Our team is dedicated to ensuring you have the best possible journey with our JDM cars.</p>
+            <h2 class = "mt-5">{{'Our Team'|trans}}</h2>
+            <p>{{'Meet the team behind Rent-A-JDM! We\'re a group of car enthusiasts, mechanics, and customer service experts who are here to make your experience exceptional. Our team is dedicated to ensuring you have the best possible journey with our JDM cars'|trans}}.</p>
 
-            <h2 class = "mt-5">Contact Us</h2>
-            <p>If you have any questions or need assistance, don't hesitate to reach out to our support team. We're here to help you get the most out of your JDM experience.</p>
-            <a href="{{ path('contact') }}" class="btn btn-danger mt-3">Contact Us</a>
+            <h2 class = "mt-5">{{'Contact Us'|trans}}</h2>
+            <p>{{'If you have any questions or need assistance, don\'t hesitate to reach out to our support team. We\'re here to help you get the most out of your JDM experience'|trans}}.</p>
+            <a href="{{ path('contact') }}" class="btn btn-danger mt-3">{{'Contact Us'|trans}}</a>
         </div>
     </div>
 {% endblock %}

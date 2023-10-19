@@ -32,14 +32,14 @@ This personal project aims to create a user-friendly platform for renting Japane
 - **Text Content Development:** Crafting compelling and informative text throughout the platform. 
 - **Brand Page:** Enabling users to filter cars by brand and explore events associated with selected cars.
 - **Multilanguage Selector Integration:** Making the platform accessible to a broader audience through multilanguage support. 
-  
+- **Multilanguage Translation:** Offer content translation to serve a global audience effectively.
+    - **EN** - 100%
+    - **ES** - 100%
+    - **FR** - 100% 
+
 ### Ongoing
 - **Structure Enhancements:** Continuously improving the structure and layout.
 - **User Limitation:** Set limitations on user actions based on their roles.
-- **Multilanguage Translation:** Offer content translation to serve a global audience effectively.
-    - **EN** - 100%
-    - **ES** - 90%
-    - **FR** - 50%
 
 ## To-Do List
 - **Shopping Cart:** Integrate a shopping cart feature for convenient car selection and reservation.

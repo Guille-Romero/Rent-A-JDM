@@ -139,6 +139,7 @@ Add to Cart: Añadir al Carrito
 #* ----------------------------------------------------  Makes  ----------------------------------------------------
 
 # Body texts
+
 Car Makes: Marcas de coche
 
 Explore Car Makes of Your Choice: Explora la marca que mas te guste
@@ -221,12 +222,47 @@ Back home: Menu principal
 #* ----------------------------------------------------  Support  ----------------------------------------------------
 
 # FAQs
+Frequently Asked Questions: Preguntas Frecuentes
+
+What are the payment options: Cuales son los métodos de pago aceptado
+We accept Visa, MasterCard, and PayPal for payments: Aceptamos pagos vía Visa, MasterCard y PayPal
+
+How can I cancel a reservation: Como puedo cancelar mi reserva
+You can cancel your reservation by logging into your account and following the cancellation process: Puedes cancelar tu reserva iniciando sesión en tu cuenta y siguiendo las etapas del proceso de anulación
+
+What is the refund policy: Cual es la politica de reembolso
+Our refund policy allows for full refunds within 30 days of booking, subject to certain conditions: Nuestra politica de reembolso permite el reembolso completo hasta 30 dias despues del pago, sujeto a ciertas condiciones
+
+Can I change my reservation dates: Puedo cambiar la fecha de la reserva
+Yes, you can modify your reservation dates by accessing your account and following the change date process: Si, puedes modificar la fecha de tu reserva accediendo a tu cuenta y siguiendo los pasos del proceso de modificacion de fecha
+
+Do you offer insurance for rentals: Ofreceis un seguro de alquiler
+Yes, we provide rental insurance options to protect your reservation. You can find more details in the insurance section of your account: Si, damos la opcion a un seguro de alquiler para proteger tu reserva. Puedes encontrar mas detalles en la sección Seguros de tu cuenta 
 
 
 # About
+About Us: Acerca de nosotros
+Welcome to Rent-A-JDM! We're a passionate team of car enthusiasts dedicated to making your dream car experience a reality: Bienvenido a Rent-A-JDM! Somos un equipo de amantes de coches japoneses dedicados a hacer que tu experiencia de ensueño se haga realidad 
+
+Our Mission: Nuestra Misión
+Our mission is to provide you with the opportunity to drive iconic JDM (Japanese Domestic Market) cars and create unforgettable memories. We're committed to delivering the best in JDM car rental and sharing our love for these vehicles with our customers: Nuestra misión es proveer la oportunidad de conducir coches JDM (Japanese Domestic Market) icónicos y crear recuerdos inolvidables. Nos comprometemos a proporcionar los mejores servicios en alquiler de coches JDM y compartir con nuestros cliente la pasión por estos vehículos 
+
+Our Team: Nuestro Equipo
+Meet the team behind Rent-A-JDM! We're a group of car enthusiasts, mechanics, and customer service experts who are here to make your experience exceptional. Our team is dedicated to ensuring you have the best possible journey with our JDM cars: Conoce al equipo que hay detrás de Rent-A-JDM! Somos un equipo de apasionados de los coches, de la mecánica, y expertos en atención al cliente dispuestos a hacer que tu experiencia sea excepcional. Nuestro equipo trabaja para asegurar que tengas la mejor experiencia posible con nuestros coches JDM
+
+Contact Us: Contáctanos
+If you have any questions or need assistance, don't hesitate to reach out to our support team. We're here to help you get the most out of your JDM experience: Si tienes alguna pregunta o necesitas asistencia, no dudes en contactar con nuestro equipo de soporte. Estamos aqui para ayudarte a sacar lo mejor de tu experiencia JDM 
 
 
 # Contact Us
+If you have any questions, feedback, or need assistance, feel free to get in touch with us. We're here to help: Si tienes preguntas, sujerencias, o necesitas asistencia, no dudes en contactarnos. Estamos aquí para ayudar
+
+We'll get back to you within 24 to 48 hours. Your inquiries are important to us, and we'll do our best to assist you as quickly as possible: Nos pondremos en contacto contigo en 24 a 48 horas. Tus consultas son importantes para nosotros, y daremos lo mejor de nosotros mismos para asistirte de la manera mas rápida posible.
+
+Your Name: Tu Nombre
+Your Email: Tu Email
+Message: Mensaje
+Send Message: Enviar Mensaje
 
 #* ----------------------------------------------------  Backoffice  ----------------------------------------------------
 

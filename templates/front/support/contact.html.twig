@@ -1,33 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}FAQs{% endblock %}
+{% block title %}{{'Contact'|trans}}{% endblock %}
 
 {% block body %}
 <h1 class = "text-center bg bg-danger text-white p-3 fw-bold">Rent-A-JDM!</h1>
     <div class = "container p-4">
-        <h1 class="border-bottom border-dark pb-4">Contact Us</h1>
+        <h1 class="border-bottom border-dark pb-4">{{'Contact Us'|trans}}</h1>
 
-    <p class = "my-4">If you have any questions, feedback, or need assistance, feel free to get in touch with us. We're here to help! If you have any questions, suggestions, or need assistance, please don't hesitate to reach out to us.</p>
-    <p> We'll get back to you within 24 to 48 hours. Your inquiries are important to us, and we'll do our best to assist you as quickly as possible.</p>
+    <p class = "my-4">{{'If you have any questions, feedback, or need assistance, feel free to get in touch with us. We\'re here to help'|trans}}!</p>
+    <p> {{'We\'ll get back to you within 24 to 48 hours. Your inquiries are important to us, and we\'ll do our best to assist you as quickly as possible'|trans}}.</p>
 
     <div class="contact-form mt-5">
         <form action="" method="post">
             <div class="form-group mt-4">
-                <label for="name">Your Name</label>
+                <label for="name">{{'Your Name'|trans}}</label>
                 <input type="text" id="name" name="name" class="form-control" required>
             </div>
 
             <div class="form-group mt-4">
-                <label for="email">Your Email</label>
+                <label for="email">{{'Your Email'|trans}}</label>
                 <input type="email" id="email" name="email" class="form-control" required>
             </div>
 
             <div class="form-group mt-4">
-                <label for="message">Message</label>
+                <label for="message">{{'Message'|trans}}</label>
                 <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
             </div>
 
-            <button type="submit" class="btn btn-danger mt-4">Send Message</button>
+            <button type="submit" class="btn btn-danger mt-4">{{'Send Message'|trans}}</button>
         </form>
     </div>
     </div>

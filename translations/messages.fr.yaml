@@ -33,6 +33,8 @@ Profile: Profil
 
 #* ----------------------------------------------------  Main  ----------------------------------------------------
 
+# Body texts 
+
 Welcome to: Bienvenue sur
 
 
@@ -115,6 +117,25 @@ for answers to common inquiries. If you don't find the information you're lookin
 
 Our support team is available to assist you with any concerns or special requests you may have. We're just a message away, and we're committed to providing you with the best possible service: Notre équipe de support est disponible pour vous aider avec toutes les préoccupations ou demandes spéciales que vous pourriez avoir. Nous ne sommes qu'à un message de distance, et nous nous engageons à vous fournir le meilleur service possible
 
+# Car list for event
+Here is the list of cars waiting for you: Voici la liste des voitures qui vous attendent
+
+Price: Prix
+Chauffer: Chauffeur
+Yes: Oui
+No: Non
+
+Custom Tyres: Pneus personnalisés
+Select Color: Sélectionner la couleur
+Red: Rouje
+Blue: Bleu
+Pink: Rose
+Green: Vert
+Black: Noir
+
+Add to Cart: Ajouter au panier
+
+
 #* ----------------------------------------------------  Makes  ----------------------------------------------------
 
 # Body texts
@@ -140,6 +161,9 @@ Ready to Own Your Dream Car: Prêt à posséder votre voiture de rêve
 
 If you're eager to become the proud owner of a specific car from our collection, please don't hesitate to reach out to our support team. We're here to assist you in making your dream a reality. Whether it's for a special event, a personal collection, or daily enjoyment, your dream JDM car is closer than you think: Si vous êtes impatient de devenir le fier propriétaire d'une voiture spécifique de notre collection, n'hésitez pas à contacter notre équipe de support. Nous sommes là pour vous aider à concrétiser votre rêve. Que ce soit pour un événement spécial, une collection personnelle ou un plaisir quotidien, votre voiture JDM de rêve est plus proche que vous ne le pensez
 
+# List by make
+Here is the list of all: Voici la liste de tous les véhicules
+cars available: disponibles
 
 #* ----------------------------------------------------  Cars  ----------------------------------------------------
 
@@ -166,7 +190,107 @@ Select Car: Sélectionnez la voiture
 Back: Retour
 
 
-#* ----------------------------------------------------  Login Form ----------------------------------------------------
+#* ----------------------------------------------------  User ----------------------------------------------------
 
 Username: Nom d'utilisateur
 Password: Mot de passe
+
+Email: E-mail
+Agree terms: Accepter les conditions
+Save Changes: Enregistrer les modifications
+Edit user profile: Modifier le profil de l'utilisateur
+
+Your Profile: Votre profil
+Edit: Modifier
+
+
+#* ----------------------------------------------------  Search page  ----------------------------------------------------
+
+Looking for: Recherche de
+
+Here is the list of events containing: Voici la liste des événements contenant
+Oops, it looks like there are no results for your search: Oups, il semble qu'il n'y ait aucun résultat pour votre recherche
+Why not check out our exciting events instead: Pourquoi ne pas consulter nos événements passionnants à la place
+Explore Events: Explorer les événements
+
+Take a look at our stunning collection of available cars containing: Jetez un coup d'œil à notre superbe collection de voitures disponibles contenant
+Why not explore our exciting car collection instead: Pourquoi ne pas explorer notre passionnante collection de voitures à la place
+Explore Cars: Explorer les voitures
+
+Back home: Retour à la page d'accueil
+
+#* ----------------------------------------------------  Support  ----------------------------------------------------
+
+# FAQs
+Frequently Asked Questions: Foire aux questions
+
+What are the payment options: Quelles sont les options de paiement
+We accept Visa, MasterCard, and PayPal for payments: Nous acceptons Visa, MasterCard et PayPal pour les paiements
+
+How can I cancel a reservation: Comment puis-je annuler une réservation
+You can cancel your reservation by logging into your account and following the cancellation process: Vous pouvez annuler votre réservation en vous connectant à votre compte et en suivant le processus d'annulation
+
+What is the refund policy: Quelle est la politique de remboursement
+Our refund policy allows for full refunds within 30 days of booking, subject to certain conditions: Notre politique de remboursement permet des remboursements complets dans les 30 jours suivant la réservation, sous certaines conditions
+
+Can I change my reservation dates: Puis-je modifier les dates de ma réservation
+Yes, you can modify your reservation dates by accessing your account and following the change date process: Oui, vous pouvez modifier les dates de votre réservation en accédant à votre compte et en suivant le processus de modification de la date
+
+Do you offer insurance for rentals: Proposez-vous une assurance pour les locations
+Yes, we provide rental insurance options to protect your reservation. You can find more details in the insurance section of your account: Oui, nous proposons des options d'assurance pour les locations afin de protéger votre réservation. Vous pouvez trouver plus de détails dans la section d'assurance de votre compte
+
+
+# About
+About Us: À propos de nous
+Welcome to Rent-A-JDM! We're a passionate team of car enthusiasts dedicated to making your dream car experience a reality: Bienvenue chez Rent-A-JDM ! Nous sommes une équipe passionnée de passionnés de voitures dédiée à la réalisation de votre expérience de voiture de rêve
+
+Our Mission: Notre mission
+Our mission is to provide you with the opportunity to drive iconic JDM (Japanese Domestic Market) cars and create unforgettable memories. We're committed to delivering the best in JDM car rental and sharing our love for these vehicles with our customers: Notre mission est de vous offrir la possibilité de conduire des voitures JDM emblématiques (Japanese Domestic Market) et de créer des souvenirs inoubliables. Nous nous engageons à offrir le meilleur en location de voitures JDM et à partager notre amour pour ces véhicules avec nos clients
+
+Our Team: Notre équipe
+Meet the team behind Rent-A-JDM! We're a group of car enthusiasts, mechanics, and customer service experts who are here to make your experience exceptional. Our team is dedicated to ensuring you have the best possible journey with our JDM cars: Rencontrez l'équipe derrière Rent-A-JDM ! Nous sommes un groupe de passionnés de voitures, de mécaniciens et d'experts en service à la clientèle qui sont là pour rendre votre expérience exceptionnelle. Notre équipe est dédiée à vous garantir le meilleur voyage possible avec nos voitures JDM
+
+Contact Us: Contactez-nous
+If you have any questions or need assistance, don't hesitate to reach out to our support team. We're here to help you get the most out of your JDM experience: Si vous avez des questions ou avez besoin d'aide, n'hésitez pas à contacter notre équipe de support. Nous sommes là pour vous aider à tirer le meilleur parti de votre expérience JDM
+
+
+# Contact Us
+If you have any questions, feedback, or need assistance, feel free to get in touch with us. We're here to help: Si vous avez des questions, des commentaires ou avez besoin d'aide, n'hésitez pas à nous contacter. Nous sommes là pour vous aider
+
+We'll get back to you within 24 to 48 hours. Your inquiries are important to us, and we'll do our best to assist you as quickly as possible: Nous vous répondrons dans un délai de 24 à 48 heures. Vos demandes sont importantes pour nous, et nous ferons de notre mieux pour vous aider le plus rapidement possible
+
+Your Name: Votre nom
+Your Email: Votre e-mail
+Message: Message
+Send Message: Envoyer le message
+
+#* ----------------------------------------------------  Backoffice  ----------------------------------------------------
+
+Users: Utilisateurs
+
+# Car list
+Car list: Liste des voitures
+Make: Marque
+Model: Modèle
+Add car: Ajouter une voiture
+you sure: Êtes-vous sûr
+YES: OUI
+
+# Car add/create
+Add: Ajouter
+Edit car: Modifier la voiture
+Image: Image
+
+# Event list
+Event list: Liste des événements
+Add event: Ajouter un événement
+Name: Nom
+Car: Voiture
+Edit event: Modifier l'événement
+
+# Make list
+Make list: Liste des marques
+Manufacturer: Fabricant
+Add make: Ajouter une marque
+Edit make: Modifier la marque
+
