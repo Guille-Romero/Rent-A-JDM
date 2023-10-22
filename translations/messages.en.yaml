@@ -135,6 +135,8 @@ Black: Black
 
 Add to Cart: Add to Cart
 
+Select your Event: Select your Event
+Here is the list of events available for the selected car: Here is the list of events available for the selected car
 
 #* ----------------------------------------------------  Makes  ----------------------------------------------------
 
@@ -300,3 +302,12 @@ Manufacturer: Manufacturer
 Add make: Add make
 Edit make: Edit make
 
+#* ----------------------------------------------------  Cart  ----------------------------------------------------
+
+Your Cart: Your Cart
+Make and model: Make and model
+Cars in Cart: Cars in Cart
+Events in Cart: Events in Cart
+Remove from Cart: Remove from Cart
+Proceed to Checkout: Proceed to Checkout
+Total: Total

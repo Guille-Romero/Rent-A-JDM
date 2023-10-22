@@ -3,7 +3,6 @@
 {% block title %}Rent-A-JDM{% endblock %}
 
 {% block body %}
-<h1 class = "text-center bg bg-danger text-white p-3 fw-bold">Rent-A-JDM!</h1>
 <div class="container my-4">
     <h2 class = "text-center fw-bold m-5">{{event.name|trans}}</h2>
 
@@ -46,9 +45,9 @@
                 </div>
                 <div class="col">
                     <h4><strong>{{'Price'|trans}}: </strong>{{ car.price}} €</h4>
-                    <form id="productForm">
+                    <form id="productForm" action = "{{path('cart_add', {'carId': car.id, 'eventId': event.id})}}" method = "POST">
 
-                        <input class = "d-none"type="number" id="productPrice" name="productPrice" value = "800">
+                        <input class = "d-none"type="number" id="productPrice" name="productPrice" value = "">
 
                         <div class="mb-2">
                             <label>{{'Chauffer'|trans}}:</label>
@@ -83,7 +82,7 @@
             </div>
         </div>
     {% endfor %}
-        <a href="{{ path('event') }}" class="btn btn-danger">{{'Back'|trans}}</a>
+        <a href="{{ path('event_list') }}" class="btn btn-danger">{{'Back'|trans}}</a>
     </div>
     </div>
 {% endblock %}

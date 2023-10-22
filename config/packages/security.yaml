@@ -32,6 +32,7 @@ security:
     access_control:
         - { path: ^/(en|es|fr)/back/user, roles: [ROLE_ADMIN] }
         - { path: ^/(en|es|fr)/back, roles: [ROLE_ADMIN, ROLE_MANAGER] }
+        - { path: ^/(en|es|fr)/cart, roles: [ROLE_USER] }
         - { path: ^/(en|es|fr)/, roles: PUBLIC_ACCESS }
 
     role_hierarchy:

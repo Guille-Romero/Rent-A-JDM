@@ -135,6 +135,8 @@ Black: Negro
 
 Add to Cart: Añadir al Carrito
 
+Select your Event: Selecciona tu Evento
+Here is the list of events available for the selected car: Esta es la lista de eventos disponibles para el coche seleccionado
 
 #* ----------------------------------------------------  Makes  ----------------------------------------------------
 
@@ -300,3 +302,12 @@ Manufacturer: Fabricante
 Add make: Añadir marca
 Edit make: Editar marca
 
+#* ----------------------------------------------------  Cart  ----------------------------------------------------
+
+Your Cart: Tu Carrito
+Make and model: Marca y modelo
+Cars in Cart: Coches en el Carrito
+Events in Cart: Eventos en el Carrito
+Remove from Cart: Quitar del Carrito
+Proceed to Checkout: Proceder al Pago
+Total: Total

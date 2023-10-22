@@ -135,6 +135,8 @@ Black: Noir
 
 Add to Cart: Ajouter au panier
 
+Select your Event: Sélectionne ton Événement 
+Here is the list of events available for the selected car: Voici la liste d'événements pour la voiture sélectionnée
 
 #* ----------------------------------------------------  Makes  ----------------------------------------------------
 
@@ -300,3 +302,12 @@ Manufacturer: Fabricant
 Add make: Ajouter une marque
 Edit make: Modifier la marque
 
+#* ----------------------------------------------------  Cart  ----------------------------------------------------
+
+Your Cart: Ton Panier
+Make and model: Marque et modele
+Cars in Cart: Voitures dans le Panier
+Events in Cart: Events dans le Panier
+Remove from Cart: Enlever du Panier
+Proceed to Checkout: Proceder au Payement
+Total: Totale

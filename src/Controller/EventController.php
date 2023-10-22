@@ -9,10 +9,14 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
+
+/**
+* @Route("/{_locale<%app.supported_locales%>}/events", name="event_")
+*/
 class EventController extends AbstractController
 {
     /**
-     * @Route("/{_locale<%app.supported_locales%>}/event", name="event")
+     * @Route("/", name="list")
      */
     public function mainEvent(EntityManagerInterface $entityManager): Response
     {
@@ -25,7 +29,7 @@ class EventController extends AbstractController
     }
 
     /**
-     * @Route("/{_locale<%app.supported_locales%>}/event/{id<\d+>}", name="event_car_list")
+     * @Route("/{id<\d+>}", name="car_list")
      */
     public function eventSelected(Event $event, EntityManagerInterface $entityManager): Response
     {
@@ -35,6 +39,20 @@ class EventController extends AbstractController
         return $this->render('front/event/cars-for-event.html.twig', [
             'event' => $event,
             'cars' => $cars,
+        ]);
+    }
+
+    /**
+     * @Route("/by-car/{id<\d+>}", name="by_car")
+     */
+    public function eventsByCar(Car $car, EntityManagerInterface $entityManager): Response
+    {
+        $repository = $entityManager->getRepository(Event::class);
+        $events = $repository->findByCarId($car->getId());
+
+        return $this->render('front/event/events-for-car.html.twig', [
+            'events' => $events,
+            'car' => $car
         ]);
     }
 }

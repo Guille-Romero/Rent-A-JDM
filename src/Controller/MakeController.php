@@ -11,12 +11,14 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-
+/**
+* @Route("/{_locale<%app.supported_locales%>}/make", name="make_")
+* */
 class MakeController extends AbstractController
 {
 
     /**
-     * @Route("/{_locale<%app.supported_locales%>}/make", name="make")
+     * @Route("/", name="list")
      * */
     public function makeList(EntityManagerInterface $entityManager): Response
     {
@@ -29,9 +31,9 @@ class MakeController extends AbstractController
     }
 
     /**
-     * @Route("/{_locale<%app.supported_locales%>}/make/{id<\d+>}", name="make_car_list")
+     * @Route("/{id<\d+>}", name="car_list")
      */
-    public function eventSelected(Make $make, EntityManagerInterface $entityManager): Response
+    public function makeSelected(Make $make, EntityManagerInterface $entityManager): Response
     {
         $repository = $entityManager->getRepository(Car::class);
         $cars = $repository->findByMakeId($make->getId());

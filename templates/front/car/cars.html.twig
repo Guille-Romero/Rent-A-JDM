@@ -3,7 +3,6 @@
 {% block title %}Rent-A-JDM{% endblock %}
 
 {% block body %}
-<h1 class = "text-center bg bg-danger text-white p-3 fw-bold">Rent-A-JDM!</h1>
 <div class="container my-4">
     <h2 class = "text-center fw-bold m-5">{{'Explore Our Cars'|trans}}</h2>
 
@@ -44,12 +43,11 @@
                     <p class="m-0"><strong>{{'Code'|trans}} :</strong> {{ car.engine }}</p>
                     <p ><strong>{{'Horsepower'|trans}} :</strong> {{ car.horsepower }}hp</p>
 
-                    <a href="" class="btn btn-danger text-white position-absolute mb-4 bottom-0 end-0 translate-middle-x">{{'Select Car'|trans}}</a>
+                    <a href="{{path('event_by_car', {'id': car.id})}}" class="btn btn-danger text-white position-absolute mb-4 bottom-0 end-0 translate-middle-x">{{'Select Car'|trans}}</a>
                 </div>
             </div>
         </div>
     {% endfor %}
-        <a href="{{ path('make') }}" class="btn btn-danger">{{'Back'|trans}}</a>
     </div>
     </div>
 {% endblock %}

@@ -26,10 +26,10 @@
                     <a class="nav-link" href="{{path('main')}}">Home <span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="{{ path ('event')}}">{{'Events'|trans}}</a>
+                    <a class="nav-link" href="{{ path ('event_list')}}">{{'Events'|trans}}</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="{{ path ('make')}}">{{'Makes'|trans}}</a>
+                    <a class="nav-link" href="{{ path ('make_list')}}">{{'Makes'|trans}}</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" href="{{ path ('cars')}}">{{'Cars'|trans}}</a>
@@ -58,12 +58,46 @@
                             <span>{{'Shopping cart'|trans}}</span>
                             <div class="cart-icon">
                                 <i class="bi bi-cart4"></i>
-                                <span class="badge article-number">1</span>
+                                {% if displayCart().cartEvents|length > 0 or displayCart().cartCars|length > 0 %}
+                                    <span class="badge article-number">{{ displayCart().cartEvents|length + displayCart().cartCars|length}}</span>
+                                {% endif %}
                             </div>
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">{{'Items'|trans}}</a></li>
-                            <li><a class="dropdown-item" href="{{path('back_main')}}">{{'Show details'|trans}}</a></li>
+                        <ul class="dropdown-menu p-0" id = "cart">
+                            <li><a class="dropdown-item bg-danger text-white p-3" href="#">{{'Items'|trans}}</a></li>
+                            <div class="dropdown-item" >
+                                <p class="mt-3 mb-1">Cars:</p>
+                                <ul>
+                                    {% for car in displayCart().cartCars %}
+                                    <li class="d-flex justify-content-between">
+                                        <div>
+                                            {{ car.make.name }} {{ car.model }} :
+                                        </div>
+                                        <div>
+                                            {{ car.price }} €
+                                        </div>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                                <p class="mt-3 mb-1">Events:</p>
+                                <ul>
+                                    {% for event in displayCart().cartEvents %}
+                                    <li class="d-flex justify-content-between">
+                                        <div>
+                                            {{ event.name }} :
+                                        </div>
+                                        <div>
+                                            {{ event.supplement }} €
+                                        </div>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            <div class="border-top border-dark text-end mt-2" >
+                                <span>Total: {{ displayTotalPrice() }} €</span>
+                            </div>
+                            </div>
+
+                            <li><a class="dropdown-item mb-2" href="{{path('cart_show')}}">{{'Show details'|trans}}</a></li>
                         </ul>
                     </li>
 
@@ -104,6 +138,7 @@
         </nav>
     </header>
     <main class = "wrapper">
+    <h1 class = "text-center bg bg-danger text-white p-3 fw-bold">Rent-A-JDM!</h1>
     {% for label, messages in app.flashes %}
         {% for message in messages %}
             <div class="alert alert-{{ label }}" role="alert">
@@ -119,8 +154,8 @@
             <h5>{{'Main'|trans}}</h5>
             <ul class="nav flex-column">
             <li class="nav-item mb-2"><a href="{{path('main')}}" class="nav-link p-0 text-muted">Home</a></li>
-            <li class="nav-item mb-2"><a href="{{ path ('event')}}" class="nav-link p-0 text-muted">{{'Events'|trans}}</a></li>
-            <li class="nav-item mb-2"><a href="{{path('make')}}" class="nav-link p-0 text-muted">{{'Makes'|trans}}</a></li>
+            <li class="nav-item mb-2"><a href="{{ path ('event_list')}}" class="nav-link p-0 text-muted">{{'Events'|trans}}</a></li>
+            <li class="nav-item mb-2"><a href="{{path('make_list')}}" class="nav-link p-0 text-muted">{{'Makes'|trans}}</a></li>
             <li class="nav-item mb-2"><a href="{{path('cars')}}" class="nav-link p-0 text-muted">{{'Cars'|trans}}</a></li>
             </ul>
         </div>

@@ -23,9 +23,11 @@
             {{ form_row(registrationForm.agreeTerms) }}
 
         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-            <button type="submit" class="btn btn-danger">{{'Save Changes'|trans}}</button>
+            <a href = "{{path ('profile')}}" class="btn btn-danger">{{'Back'|trans}}</a>
+            <button type="submit" class="btn btn-dark">{{'Save Changes'|trans}}</button>
         {% else %}
-            <button type="submit" class="btn btn-danger">{{'Sign in'|trans}}</button>
+            <a href = "{{path ('main')}}" class="btn btn-danger">{{'Back home'|trans}}</a>
+            <button type="submit" class="btn btn-dark">{{'Sign in'|trans}}</button>
         {% endif %}
             
         {{ form_end(registrationForm) }}

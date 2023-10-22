@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rent-A-JDM{% endblock %}
+
+{% block body %}
+<div class="container my-4">
+    <h1 class="my-4 text-center fw-bold">{{'Your Cart'|trans}}</h1>
+
+    <h2 class="mt-5">{{'Cars in Cart'|trans}}</h2>
+
+    <table class="table table-hover mt-4">
+        <thead>
+            <tr>
+                <th scope="col" class = "col-2 text-center">{{'Image'|trans}}</th>
+                <th scope="col" class = "col-3 text-center">{{'Make and model'|trans}}</th>
+                <th scope="col" class = "col-2 text-center">{{'Chassis'|trans}}</th>
+                <th scope="col" class = "col-2 text-center">{{'Horsepower'|trans}}</th>
+                <th scope="col">{{'Price'|trans}}</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for car in cartCars %}
+            <tr>
+                <th scope="row"><img src="{{car.image}}" alt="Item Image" class="img-fluid"></th>  
+                    <td class = "text-center"><h4 class = "cart-vertical-center">{{car.make.name}} {{car.model}}</h4></td>
+                    <td class = "text-center"><h4 class = "cart-vertical-center">{{car.chassis}}</h4></td>
+                    <td class = "text-center"><h4 class = "cart-vertical-center">{{car.horsepower}}</h4></td>
+                    <td class = "text-end"><h3 class = "cart-vertical-center fw-bold">{{car.price}} €</h3></td>
+                    <td class = "text-end"><a href = "{{path('cart_remove_car', {'id': car.id})}}" class="btn btn-danger cart-vertical-center">{{'Remove from Cart'|trans}}</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2 class="mt-5">{{'Events in Cart'|trans}}</h2>
+
+    <table class="table table-hover mt-4">
+        <thead>
+            <tr>
+                <th scope="col" class = "col-2 text-center">{{'Image'|trans}}</th>
+                <th scope="col" class = "col-7 text-center">{{'Name'|trans}}</th>
+                <th scope="col">{{'Supplement'|trans}}</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for event in cartEvents %}
+            <tr>
+                <th scope="row"><img src="{{event.image}}" alt="Item Image" class="img-fluid"></th>  
+                    <td class = "text-center"><h4 class = "cart-vertical-center">{{event.name}}</h4></td>
+                    <td class = "text-end"><h3 class = "cart-vertical-center fw-bold">{{event.supplement}} €</h3></td>
+                    <td class = "text-end"><a href = "{{path('cart_remove_event', {'id': event.id})}}" class="btn btn-danger cart-vertical-center">{{'Remove from Cart'|trans}}</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2 class="mt-5">{{'Total'|trans}}</h2>
+
+    <table class="table table-hover mt-4">
+        <thead>
+            <tr>
+                <th scope="col" class = "col-7"></th>
+                <th scope="col" class = "col-2"></th>
+                <th scope="col" class = "col-1"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td><h4 class = "cart-vertical-center">{{'Total'|trans}}:</h4></td>
+                <td class = "text-end"><h3 class = "cart-vertical-center fw-bold">{{total}} €</h3></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class = "text-end">
+        <a href="" class="btn btn-danger mt-4 p-4">{{'Proceed to Checkout'|trans}}</a>
+    <div>
+</div>
+{% endblock %}

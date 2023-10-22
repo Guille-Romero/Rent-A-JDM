@@ -37,3 +37,11 @@ nav, .link-light {
     top: -10px;
     right: -10px;
 }
+
+.cart-vertical-center{
+    margin-top: 2.5rem;
+}
+
+#cart{
+    width: 16rem;
+}

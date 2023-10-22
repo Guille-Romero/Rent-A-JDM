@@ -60,4 +60,18 @@ class EventRepository extends ServiceEntityRepository
         // returns an array of Product objects
         return $query->getResult();
     }
+
+    /**
+     * @return Car[] Returns an array of Car objects
+     * Custom method to retrieve all the cars related to an event
+     */
+    public function findByCarId($carId): array
+    {
+        return $this->createQueryBuilder('e')
+            ->join('e.car', 'c')
+            ->where('c.id = :carId')
+            ->setParameter('carId', $carId)
+            ->getQuery()
+            ->getResult();
+    }
 }

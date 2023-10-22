@@ -69,10 +69,7 @@ class Cart
         return $this;
     }
 
-    /**
-     * @return Collection<int, Car>
-     */
-    public function getCar(): Collection
+    public function getCar()
     {
         return $this->car;
     }
@@ -93,10 +90,7 @@ class Cart
         return $this;
     }
 
-    /**
-     * @return Collection<int, Event>
-     */
-    public function getEvent(): Collection
+    public function getEvent()
     {
         return $this->event;
     }

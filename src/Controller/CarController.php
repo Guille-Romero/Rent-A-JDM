@@ -17,7 +17,7 @@ class CarController extends AbstractController
     /**
      * @Route("/{_locale<%app.supported_locales%>}/car", name="cars")
      */
-    public function index(EntityManagerInterface $entityManager): Response
+    public function carList(EntityManagerInterface $entityManager): Response
     {
         $repository = $entityManager->getRepository(Car::class);
         $cars = $repository->findAll();
