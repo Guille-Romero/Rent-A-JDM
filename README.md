@@ -36,11 +36,11 @@ This personal project aims to create a user-friendly platform for renting Japane
     - **EN** - 100%
     - **ES** - 100%
     - **FR** - 100% 
-
+- **Shopping Cart:** Integrate a shopping cart feature for convenient car selection and reservation.
+  
 ### Ongoing
 - **Structure Enhancements:** Continuously improving the structure and layout.
 - **User Limitation:** Set limitations on user actions based on their roles.
-- **Shopping Cart:** Integrate a shopping cart feature for convenient car selection and reservation.
 
 ## To-Do List
 - **Translate Flash Messages**
