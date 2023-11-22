@@ -28,13 +28,6 @@ class UserController extends AbstractController
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        if ($request->isMethod('POST')){
-            
-            $request->setLocale($locale);
-
-           dd($locale);
-        }
-
         return $this->render('user/login.html.twig', [
             'last_username' => $lastUsername,
             'error'         => $error,
