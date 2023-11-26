@@ -3,7 +3,7 @@
 {% block title %}{{'Log in'|trans}}{% endblock %}
 
 {% block body %}
-    <div class = "container m-4">
+    <div class = "container my-4 login">
         {% if error %}
             <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         {% endif %}

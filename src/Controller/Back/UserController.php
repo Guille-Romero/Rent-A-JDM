@@ -35,7 +35,7 @@ class UserController extends AbstractController
     /**
      * @Route("/create", name="create")
      */
-    public function createUser(Request $request, EntityManagerInterface $entityManager): Response
+    public function createUser(Request $request, EntityManagerInterface $entityManager, UserPasswordHasherInterface $userPasswordHasher): Response
     {
         // Build a form that allows the creation of a new user
         $user = new User();
@@ -44,8 +44,22 @@ class UserController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid())
         {
+            
+            // Create and persist a Cart for the user upon register
+            $cart = new Cart();
+            $cart->addUser($user);
+
+            // Persist the cart and user
+            $entityManager->persist($cart);
+
+            $user->setPassword(
+                $userPasswordHasher->hashPassword(
+                        $user,
+                        $form->get('password')->getData()
+                    )
+                );
+
             $entityManager->persist($user);
-            $entityManager->flush();
 
             $entityManager->flush();
 

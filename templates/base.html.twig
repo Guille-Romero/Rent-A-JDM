@@ -109,7 +109,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{path('profile')}}">{{'Profile'|trans}}</a></li>
-                        {% if is_granted('ROLE_MANAGER') %}
+                        {% if is_granted('ROLE_RECRUITER') %}
                             <li><a class="dropdown-item" href="{{path('back_main')}}">Backoffice</a></li>
                         {% endif %}
                         </ul>
