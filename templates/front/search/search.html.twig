@@ -29,7 +29,7 @@
         <div class="no-results-message">
             <p>{{'Oops, it looks like there are no results for your search'|trans}}.</p>
             <p>{{'Why not check out our exciting events instead'|trans}} ?</p>
-            <a href="{{path('event')}}" class="btn btn-danger">{{'Explore Events'|trans}}</a>
+            <a href="{{path('event_list')}}" class="btn btn-danger">{{'Explore Events'|trans}}</a>
         </div>
     {% endif %}
 
@@ -86,7 +86,7 @@
         <div class="no-results-message mb-5">
             <p>{{'Oops, it looks like there are no results for your search'|trans}}.</p>
             <p>{{'Why not explore our exciting car collection instead'|trans}} ?</p>
-            <a href="{{ path('cars') }}" class="btn btn-danger">{{'Explore Cars'|trans}}</a>
+            <a href="{{ path('cars_list') }}" class="btn btn-danger">{{'Explore Cars'|trans}}</a>
         </div>
     {% endif %}
 
