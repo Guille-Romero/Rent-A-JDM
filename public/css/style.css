@@ -8,6 +8,19 @@ nav, .link-light {
     font-size: 1.3rem;
 }
 
+tr:nth-child(even) {
+    background: #d3d3d365
+}
+
+tr:hover{
+    border: 2px solid #dc3545;
+}
+
+thead{
+    background: #212529;
+    color: white;
+}
+
 .wrapper {
     flex-grow: 1;
 }

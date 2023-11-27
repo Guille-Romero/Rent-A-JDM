@@ -34,22 +34,11 @@
                     <li class="nav-item">
                     <a class="nav-link" href="{{path('back_car_list')}}">{{'Cars'|trans}}</a>
                     </li>
+                    {% if is_granted('ROLE_ADMIN') %}
                     <li class="nav-item">
                     <a class="nav-link" href="{{path('back_user_list')}}">{{'Users'|trans}}</a>
                     </li>
-                    <div class="navbar-nav lang-selector ms-5">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown-language" role="button"
-                                data-bs-toggle="dropdown">
-                                <span>{{ app.request.locale|locale_name(app.request.locale)|u.title }}</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'en'})) }}">English</a></li>
-                                <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'es'})) }}">Español</a></li>
-                                <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'fr'})) }}">Français</a></li>
-                            </ul>
-                        </li>
-                    </div>
+                    {% endif %}
                 </ul>
             </div>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -75,17 +64,25 @@
                     </li>
                 {% endif %}
                 </ul>
-                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <a href = "{{path ('logout')}}"><button type="button" class="btn btn-danger me-2">{{'Log out'|trans}}</button></a>
-                {% else %}
-                    <a href = "{{path ('login')}}"><button type="button" class="btn btn-danger me-2">{{'Log in'|trans}}</button></a>
-                    <a href = "{{path ('register')}}"><button type="button" class="btn btn-danger me-2">{{'Sign in'|trans}}</button></a>
-                {% endif %}
-
-                <form class="d-flex" action="list.html">
-                    <input class="form-control form-control-sm me-2" name="search" type="search" placeholder="{{'Search'|trans}}...">
-                    <button class="btn btn-outline-danger" type="submit"><i class="bi bi-search"></i></button>
-                </form>
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <a href = "{{path ('logout', {'_locale': app.request.locale})}}"><button type="button" class="btn btn-outline-danger ms-3">{{'Log out'|trans}}</button></a>
+            {% else %}
+                <a href = "{{path ('login')}}"><button type="button" class="btn btn-outline-danger ms-3">{{'Log in'|trans}}</button></a>
+                <a href = "{{path ('register')}}"><button type="button" class="btn btn-outline-danger ms-3">{{'Sign in'|trans}}</button></a>
+            {% endif %}
+            <div class="navbar-nav lang-selector ms-3 me-5">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown-language" role="button"
+                        data-bs-toggle="dropdown">
+                        <span>{{ app.request.locale|locale_name(app.request.locale)|u.title }}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'en'})) }}">English</a></li>
+                        <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'es'})) }}">Español</a></li>
+                        <li><a class="dropdown-item" href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'fr'})) }}">Français</a></li>
+                    </ul>
+                </li>
+            </div>
         </nav>
     </header>
     <main>

@@ -44,6 +44,7 @@ This personal project aims to create a user-friendly platform for renting Japane
 
 ## To-Do List
 - **Translate Flash Messages**
+- **Make options for cars functional**
 
 
 ## Thanks
