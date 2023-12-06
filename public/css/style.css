@@ -21,11 +21,6 @@ thead{
     color: white;
 }
 
-img {
-    width: 100%;
-    height: auto;
-}
-
 .wrapper {
     flex-grow: 1;
 }
