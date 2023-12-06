@@ -21,6 +21,10 @@ thead{
     color: white;
 }
 
+.footer-titles{
+    font-size: 1.4rem;
+}
+
 .wrapper {
     flex-grow: 1;
 }
