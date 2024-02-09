@@ -15,6 +15,7 @@
 ## Project Overview
 
 This personal project aims to create a user-friendly platform for renting Japanese sports cars, with a focus on providing an exceptional experience for our customers.
+This project is currently hosted on a personal server at [https://82.67.42.20/](https://82.67.42.20/).
 
 ## Work in Progress (WIP)
 
